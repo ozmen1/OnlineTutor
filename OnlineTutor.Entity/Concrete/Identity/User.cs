@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using OnlineTutor.Entity.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,9 @@ namespace OnlineTutor.Entity.Concrete.Identity
         public string LastName { get; set; }
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public string Address { get; set; }
         public string City { get; set; }
-
+        public bool IsDeleted { get; set; }
+        public bool IsApproved { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
 }

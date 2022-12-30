@@ -1,12 +1,13 @@
-﻿using System;
+﻿using OnlineTutor.Entity.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineTutor.Entity.Abstract
+namespace OnlineTutor.Entity.Concrete
 {
-    public interface IEntityBase
+    public class Comment : IEntityBase
     {
         public int Id { get; set; }
         public string Name { get; set; }
