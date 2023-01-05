@@ -9,6 +9,7 @@ namespace OnlineTutor.Entity.Concrete
 {
     public class Student : User
     {
-        public string MyProperty { get; set; }
+        public List<Comment>? Comments { get; set; }
+        public List<Request>? Requests { get; set; }
     }
 }

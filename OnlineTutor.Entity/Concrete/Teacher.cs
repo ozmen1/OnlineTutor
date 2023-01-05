@@ -9,7 +9,11 @@ namespace OnlineTutor.Entity.Concrete
 {
     public class Teacher : User
     {
+        public string TeacherInfo { get; set; }
         public string Department { get; set; }
-        public byte Point { get; set; }
+        public byte TeacherPoint { get; set; }
+        public string? ResponseRange { get; set; }
+        public List<Comment>? Comments { get; set; }
+        public List<ShowCard>? ShowCards { get; set; }
     }
 }
