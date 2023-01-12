@@ -1,0 +1,53 @@
+﻿@model ShowCardWithCategoryDto
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+<div class="row">
+    <div class="col-3">
+        @foreach (var sc in Model.CategoryDtos)
+        {
+
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading_@sc.Name">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne_@sc.Name" aria-expanded="false" aria-controls="flush-collapseOne_@sc.Name">
+                            @sc.Name
+                        </button>
+                    </h2>
+                    @foreach (var s in sc.SubjectDtos)
+                    {
+                        <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="list-group ml-4">
+                                <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                    @s.Name
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="d-flex col-6">
+        @foreach (var showCard in Model.ShowCardDtos)
+        {
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success">@showCard.</strong>
+                        <h3 class="mb-0">@showCard.Price</h3>
+                        <div class="mb-1 text-muted">Nov 11</div>
+                        <p class="mb-auto"></p>
+                        <a href="#" class="stretched-link">Continue reading</a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
