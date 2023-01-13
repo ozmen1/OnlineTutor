@@ -11,6 +11,6 @@ namespace OnlineTutor.Entity.Concrete
     {
         public List<Comment>? Comments { get; set; }
         public List<Request>? Requests { get; set; }
-        public string Url { get; set; }
+        public string Url { get; set; } //comment
     }
 }
