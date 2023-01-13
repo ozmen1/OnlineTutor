@@ -11,7 +11,7 @@ using OnlineTutor.Data.Concrete.EfCore.Contexts;
 namespace OnlineTutor.Data.Migrations
 {
     [DbContext(typeof(OnlineTutorContext))]
-    [Migration("20230112115214_InitialDb")]
+    [Migration("20230113114848_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -396,7 +396,7 @@ namespace OnlineTutor.Data.Migrations
                             Id = 1,
                             ContactNumber = "0555-555-55-55",
                             Expectations = "Kalkülüs dersi için 5 saatlik özel ders",
-                            ResponseTime = new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(9051),
+                            ResponseTime = new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(3236),
                             ShowCardId = 1,
                             StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc"
                         });
@@ -573,9 +573,14 @@ namespace OnlineTutor.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("ShowCardId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("SubjectId", "CategoryId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("ShowCardId");
 
                     b.ToTable("SubjectCategories", (string)null);
 
@@ -667,8 +672,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
                             AccessFailedCount = 0,
                             City = "Kocaeli",
-                            ConcurrencyStamp = "adcc512f-383c-45dd-83e2-fdf9b22f5f9e",
-                            CreatedDate = new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(6374),
+                            ConcurrencyStamp = "8fd1c01a-8ba9-4d2a-a4b0-c76e7418ffc3",
+                            CreatedDate = new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(53),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "keremozmen34@gmail.com",
                             EmailConfirmed = false,
@@ -678,7 +683,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Özmen",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6f25eaae-b556-4973-af24-3230b60e6432",
+                            SecurityStamp = "9d5775a8-e283-4e50-97a7-c3ad1e770d7f",
                             TwoFactorEnabled = false,
                             Url = "universite-ogrencisi"
                         },
@@ -687,8 +692,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "897a349e-e3ce-4288-9806-953952eacf59",
-                            CreatedDate = new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(6399),
+                            ConcurrencyStamp = "65cb25f8-e9b4-480a-bab8-92931a6d96db",
+                            CreatedDate = new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(91),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "example@example.com",
                             EmailConfirmed = false,
@@ -698,7 +703,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Doe",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0f1732e6-4b45-4b77-b530-b31459901b24",
+                            SecurityStamp = "5a824c93-aeb4-42d9-9ac9-025337d3c07b",
                             TwoFactorEnabled = false,
                             Url = "lise-ogrencisi"
                         });
@@ -731,8 +736,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "45b10ea0-0fb3-4feb-9f4c-431bf22be3c6",
-                            CreatedDate = new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(4789),
+                            ConcurrencyStamp = "4db0c53b-b8d1-4810-84db-61ee921042e6",
+                            CreatedDate = new DateTime(2023, 1, 13, 14, 48, 47, 897, DateTimeKind.Local).AddTicks(8116),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "keremozmentr@gmail.com",
                             EmailConfirmed = false,
@@ -742,7 +747,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Özmen",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bf5c5ae8-e6a1-47a9-b120-c2512b3e8a81",
+                            SecurityStamp = "2df79e68-02eb-4791-aefa-3805c305cb08",
                             TwoFactorEnabled = false,
                             TeacherInfo = "Deneyimli",
                             TeacherPoint = (byte)0,
@@ -753,8 +758,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "bc90ae6d-f1c3-4c2c-b60a-eaa2e29d59ac",
-                            CreatedDate = new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(4848),
+                            ConcurrencyStamp = "3620cfba-0215-4545-87f6-22c16eb289be",
+                            CreatedDate = new DateTime(2023, 1, 13, 14, 48, 47, 897, DateTimeKind.Local).AddTicks(8219),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "example@example.com",
                             EmailConfirmed = false,
@@ -764,7 +769,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Doe",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06153ebf-c5f0-44e7-a55b-2bca6e020c18",
+                            SecurityStamp = "ec748aad-8704-4763-83fb-5765a13b2cb2",
                             TwoFactorEnabled = false,
                             TeacherInfo = "Deneyimsiz",
                             TeacherPoint = (byte)0,
@@ -880,6 +885,10 @@ namespace OnlineTutor.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("OnlineTutor.Entity.Concrete.ShowCard", null)
+                        .WithMany("SubjectCategories")
+                        .HasForeignKey("ShowCardId");
+
                     b.HasOne("OnlineTutor.Entity.Concrete.Subject", "Subject")
                         .WithMany("SubjectCategories")
                         .HasForeignKey("SubjectId")
@@ -917,6 +926,8 @@ namespace OnlineTutor.Data.Migrations
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.ShowCard", b =>
                 {
                     b.Navigation("Requests");
+
+                    b.Navigation("SubjectCategories");
                 });
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.Subject", b =>

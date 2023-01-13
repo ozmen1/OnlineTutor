@@ -239,30 +239,6 @@ namespace OnlineTutor.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SubjectCategories",
-                columns: table => new
-                {
-                    SubjectId = table.Column<int>(type: "INTEGER", nullable: false),
-                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SubjectCategories", x => new { x.SubjectId, x.CategoryId });
-                    table.ForeignKey(
-                        name: "FK_SubjectCategories_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_SubjectCategories_Subjects_SubjectId",
-                        column: x => x.SubjectId,
-                        principalTable: "Subjects",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
                 {
@@ -347,15 +323,45 @@ namespace OnlineTutor.Data.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "SubjectCategories",
+                columns: table => new
+                {
+                    SubjectId = table.Column<int>(type: "INTEGER", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ShowCardId = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubjectCategories", x => new { x.SubjectId, x.CategoryId });
+                    table.ForeignKey(
+                        name: "FK_SubjectCategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubjectCategories_ShowCards_ShowCardId",
+                        column: x => x.ShowCardId,
+                        principalTable: "ShowCards",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_SubjectCategories_Subjects_SubjectId",
+                        column: x => x.SubjectId,
+                        principalTable: "Subjects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "City", "ConcurrencyStamp", "CreatedDate", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "IsApproved", "IsDeleted", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", 0, "İstanbul", "897a349e-e3ce-4288-9806-953952eacf59", new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(6399), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "example@example.com", false, "Jane", null, false, false, "Doe", false, null, null, null, null, null, false, "0f1732e6-4b45-4b77-b530-b31459901b24", false, null },
-                    { "86c02fd2-67c2-4a94-8113-a751bfe9f71f", 0, "Kocaeli", "adcc512f-383c-45dd-83e2-fdf9b22f5f9e", new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(6374), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "keremozmen34@gmail.com", false, "Kerem", null, false, false, "Özmen", false, null, null, null, null, null, false, "6f25eaae-b556-4973-af24-3230b60e6432", false, null },
-                    { "dc4ac19a-431c-40f1-a2df-cd49869e3559", 0, "İstanbul", "45b10ea0-0fb3-4feb-9f4c-431bf22be3c6", new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(4789), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "keremozmentr@gmail.com", false, "Kerem", null, false, false, "Özmen", false, null, null, null, null, null, false, "bf5c5ae8-e6a1-47a9-b120-c2512b3e8a81", false, null },
-                    { "fc4ac19b-331c-90f1-z2df-xd49869e3351", 0, "İstanbul", "bc90ae6d-f1c3-4c2c-b60a-eaa2e29d59ac", new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(4848), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "example@example.com", false, "John", null, false, false, "Doe", false, null, null, null, null, null, false, "06153ebf-c5f0-44e7-a55b-2bca6e020c18", false, null }
+                    { "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", 0, "İstanbul", "65cb25f8-e9b4-480a-bab8-92931a6d96db", new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(91), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "example@example.com", false, "Jane", null, false, false, "Doe", false, null, null, null, null, null, false, "5a824c93-aeb4-42d9-9ac9-025337d3c07b", false, null },
+                    { "86c02fd2-67c2-4a94-8113-a751bfe9f71f", 0, "Kocaeli", "8fd1c01a-8ba9-4d2a-a4b0-c76e7418ffc3", new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(53), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "keremozmen34@gmail.com", false, "Kerem", null, false, false, "Özmen", false, null, null, null, null, null, false, "9d5775a8-e283-4e50-97a7-c3ad1e770d7f", false, null },
+                    { "dc4ac19a-431c-40f1-a2df-cd49869e3559", 0, "İstanbul", "4db0c53b-b8d1-4810-84db-61ee921042e6", new DateTime(2023, 1, 13, 14, 48, 47, 897, DateTimeKind.Local).AddTicks(8116), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "keremozmentr@gmail.com", false, "Kerem", null, false, false, "Özmen", false, null, null, null, null, null, false, "2df79e68-02eb-4791-aefa-3805c305cb08", false, null },
+                    { "fc4ac19b-331c-90f1-z2df-xd49869e3351", 0, "İstanbul", "3620cfba-0215-4545-87f6-22c16eb289be", new DateTime(2023, 1, 13, 14, 48, 47, 897, DateTimeKind.Local).AddTicks(8219), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "example@example.com", false, "John", null, false, false, "Doe", false, null, null, null, null, null, false, "ec748aad-8704-4763-83fb-5765a13b2cb2", false, null }
                 });
 
             migrationBuilder.InsertData(
@@ -397,23 +403,23 @@ namespace OnlineTutor.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "SubjectCategories",
-                columns: new[] { "CategoryId", "SubjectId" },
+                columns: new[] { "CategoryId", "SubjectId", "ShowCardId" },
                 values: new object[,]
                 {
-                    { 1, 1 },
-                    { 2, 1 },
-                    { 1, 2 },
-                    { 2, 2 },
-                    { 1, 3 },
-                    { 2, 3 },
-                    { 3, 4 },
-                    { 3, 5 },
-                    { 4, 6 },
-                    { 4, 7 },
-                    { 2, 8 },
-                    { 1, 9 },
-                    { 2, 9 },
-                    { 4, 10 }
+                    { 1, 1, null },
+                    { 2, 1, null },
+                    { 1, 2, null },
+                    { 2, 2, null },
+                    { 1, 3, null },
+                    { 2, 3, null },
+                    { 3, 4, null },
+                    { 3, 5, null },
+                    { 4, 6, null },
+                    { 4, 7, null },
+                    { 2, 8, null },
+                    { 1, 9, null },
+                    { 2, 9, null },
+                    { 4, 10, null }
                 });
 
             migrationBuilder.InsertData(
@@ -446,7 +452,7 @@ namespace OnlineTutor.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "Id", "ContactNumber", "Expectations", "ResponseTime", "ShowCardId", "StudentId" },
-                values: new object[] { 1, "0555-555-55-55", "Kalkülüs dersi için 5 saatlik özel ders", new DateTime(2023, 1, 12, 14, 52, 14, 236, DateTimeKind.Local).AddTicks(9051), 1, "55dc4a34-a463-46b2-8fb3-e97a76f70cfc" });
+                values: new object[] { 1, "0555-555-55-55", "Kalkülüs dersi için 5 saatlik özel ders", new DateTime(2023, 1, 13, 14, 48, 47, 898, DateTimeKind.Local).AddTicks(3236), 1, "55dc4a34-a463-46b2-8fb3-e97a76f70cfc" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -519,6 +525,11 @@ namespace OnlineTutor.Data.Migrations
                 name: "IX_SubjectCategories_CategoryId",
                 table: "SubjectCategories",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubjectCategories_ShowCardId",
+                table: "SubjectCategories",
+                column: "ShowCardId");
         }
 
         /// <inheritdoc />
@@ -552,13 +563,13 @@ namespace OnlineTutor.Data.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "ShowCards");
-
-            migrationBuilder.DropTable(
                 name: "Students");
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "ShowCards");
 
             migrationBuilder.DropTable(
                 name: "Subjects");

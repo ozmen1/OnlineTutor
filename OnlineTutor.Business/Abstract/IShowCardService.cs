@@ -16,5 +16,6 @@ namespace OnlineTutor.Business.Abstract
         void Delete(ShowCard showCard);
         List<ShowCard> GetShowCardsByCategory();
         Task<List<ShowCard>> GetHomePageShowCardsAsync();
+        Task<List<ShowCard>> GetShowCardsWithSubjects(int id);
     }
 }

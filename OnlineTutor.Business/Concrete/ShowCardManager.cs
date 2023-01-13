@@ -41,6 +41,11 @@ namespace OnlineTutor.Business.Concrete
             return await _unitOfWork.ShowCards.GetHomePageShowCardsAsync();
         }
 
+        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
+        {
+            return await _unitOfWork.ShowCards.GetShowCardsWithSubjects(id);
+        }
+
         public List<ShowCard> GetShowCardsByCategory()
         {
             throw new NotImplementedException();

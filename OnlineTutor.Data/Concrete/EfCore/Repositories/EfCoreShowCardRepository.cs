@@ -63,9 +63,13 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<ShowCard> GetShowCardsWithCategories(int id)
+        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
         {
-            throw new NotImplementedException();
+            return await OnlineTutorContext
+                .ShowCards
+                .Include(sc => sc.SubjectCategories)
+                .ThenInclude(scc => scc.Subject)
+                .ToListAsync();
         }
 
         public void isActive(ShowCard showCard)
