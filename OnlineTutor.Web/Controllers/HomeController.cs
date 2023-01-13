@@ -52,6 +52,8 @@ namespace OnlineTutor.Web.Controllers
                     Description = showCard.Description,
                     Price = showCard.Price,
                     Url = showCard.Url,
+                    FirstName = showCard.Teacher.FirstName,
+                    LastName = showCard.Teacher.LastName
 
                 });
             }

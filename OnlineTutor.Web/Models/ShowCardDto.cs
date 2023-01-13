@@ -10,5 +10,14 @@ namespace OnlineTutor.Web.Models
         public string Url { get; set; }
         public decimal Price { get; set; }
         public Teacher? Teacher { get; set; }
+        //public User User { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
+
+    //public class User
+    //{
+    //    public string FirstName { get; set; }
+    //    public string LastName { get; set; }
+    //}
 }

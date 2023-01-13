@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj": {}
+    "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj": {
+    "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
+        "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
         "projectName": "OnlineTutor.Business",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
-        "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\obj\\",
+        "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
+        "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
-                "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj"
+              "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
+                "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj"
               }
             }
           }
@@ -63,17 +63,17 @@
         }
       }
     },
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
+    "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj",
         "projectName": "OnlineTutor.Data",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj",
-        "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\obj\\",
+        "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj",
+        "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,8 +87,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj": {
-                "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj"
+              "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj": {
+                "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj"
               }
             }
           }
@@ -138,17 +138,17 @@
         }
       }
     },
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj": {
+    "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
         "projectName": "OnlineTutor.Entity",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
-        "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\obj\\",
+        "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
+        "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -199,17 +199,17 @@
         }
       }
     },
-    "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj": {
+    "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj",
+        "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj",
         "projectName": "OnlineTutor.Web",
-        "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj",
-        "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Web\\obj\\",
+        "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Web\\OnlineTutor.Web.csproj",
+        "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,8 +223,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj": {
-                "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj"
+              "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj": {
+                "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj"
               }
             }
           }

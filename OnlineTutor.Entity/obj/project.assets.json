@@ -768,19 +768,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SABAH\\.nuget\\packages\\": {}
+    "C:\\Users\\ozmen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
       "projectName": "OnlineTutor.Entity",
-      "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
-      "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Entity\\obj\\",
+      "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\OnlineTutor.Entity.csproj",
+      "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

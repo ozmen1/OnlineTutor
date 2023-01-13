@@ -1345,19 +1345,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SABAH\\.nuget\\packages\\": {}
+    "C:\\Users\\ozmen\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
+      "projectUniqueName": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
       "projectName": "OnlineTutor.Business",
-      "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
-      "packagesPath": "C:\\Users\\SABAH\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Business\\obj\\",
+      "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\OnlineTutor.Business.csproj",
+      "packagesPath": "C:\\Users\\ozmen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SABAH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ozmen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1371,8 +1371,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
-              "projectPath": "C:\\Users\\SABAH\\Documents\\GitHub\\NBUY\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj"
+            "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj": {
+              "projectPath": "C:\\Users\\ozmen\\GitHub\\OnlineTutor\\OnlineTutor.Data\\OnlineTutor.Data.csproj"
             }
           }
         }
