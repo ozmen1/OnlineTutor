@@ -20,7 +20,7 @@ namespace OnlineTutor.Entity.Concrete
         public Teacher Teacher { get; set; }
         public string TeacherId { get; set; }
         public List<Request> Requests { get; set; }
-        public List<SubjectCategory> SubjectCategories { get; set; } //new comment1
+        public List<SubjectCategory> SubjectCategories { get; set; } //new comment1 //comment2
         //public User User { get; set; }
         //public int UserId { get; set; }
     }
