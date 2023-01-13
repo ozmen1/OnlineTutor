@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\OnlineTutor.Web.props" />
-</Project>

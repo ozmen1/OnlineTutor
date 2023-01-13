@@ -55,12 +55,7 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
 
         public Task<List<ShowCard>> GetShowCardsByCategoryAsync(string category)
         {
-            var showCards = OnlineTutorContext.ShowCards.AsQueryable();
-            if(category!=null)
-            {
-                showCards = showCards
-                    .Include(sc => sc.Subj)
-            }
+            throw new NotImplementedException();
         }
 
         public Task<List<ShowCard>> GetShowCardsByTeacherAsync(int teacherId)
