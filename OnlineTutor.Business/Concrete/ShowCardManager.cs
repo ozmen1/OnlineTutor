@@ -1,5 +1,6 @@
 ﻿using OnlineTutor.Business.Abstract;
 using OnlineTutor.Data.Abstract;
+using OnlineTutor.Data.Concrete;
 using OnlineTutor.Entity.Concrete;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,11 @@ namespace OnlineTutor.Business.Concrete
             return await _unitOfWork.ShowCards.GetShowCardsWithSubjects(id);
         }
 
+        public async Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl)
+        {
+            return await _unitOfWork.ShowCards.GetShowCardDetailsByUrlAsync(showCardUrl);
+        }
+
         public List<ShowCard> GetShowCardsByCategory()
         {
             throw new NotImplementedException();
@@ -54,6 +60,11 @@ namespace OnlineTutor.Business.Concrete
         public void Update(ShowCard showCard)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subject)
+        {
+            return await _unitOfWork.ShowCards.GetShowCardsBySubjectAsync(subject);
         }
     }
 }

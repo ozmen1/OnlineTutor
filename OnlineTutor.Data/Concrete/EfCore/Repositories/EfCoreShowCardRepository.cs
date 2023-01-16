@@ -34,7 +34,7 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             return await OnlineTutorContext
                 .ShowCards
                 .Include(sc3 => sc3.Teacher)
-                .Where(sc=>sc.IsHome)
+                .Where(sc => sc.IsHome)
                 .ToListAsync();
         }
 
@@ -48,9 +48,16 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl)
+        public async Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl)
         {
-            throw new NotImplementedException();
+            return await OnlineTutorContext
+               .ShowCards
+               .Where(s => s.Url == showCardUrl)
+               .Include(s => s.Teacher)
+               .Include(s => s.Subject)
+               .Include(s => s.Subject.SubjectCategories)
+               .ThenInclude(sc => sc.Category)
+               .FirstOrDefaultAsync();
         }
 
         public Task<List<ShowCard>> GetShowCardsByCategoryAsync(string category)
@@ -58,7 +65,25 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subject)
+        {
+            var showCards = OnlineTutorContext.ShowCards.AsQueryable();
+            if (subject != null)
+            {
+                showCards = showCards
+                    .Include(p => p.SubjectCategories)
+                    .ThenInclude(pc => pc.Category)
+                    .Where(p => p.SubjectCategories.Any(pc => pc.Category.Url == subject));
+            }
+            return await showCards.ToListAsync();
+        }
+
         public Task<List<ShowCard>> GetShowCardsByTeacherAsync(int teacherId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ShowCard> GetShowCardsWithCategories(int id)
         {
             throw new NotImplementedException();
         }

@@ -38,6 +38,7 @@ namespace OnlineTutor.Data.Config
                       Title = "Online Matematik Dersi",
                       Description = "Lise, Üniversite matematik dersleri verilir.",
                       SubjectId = 1,
+                      CategoryId = 1,
                       Url = "ozel-ders-1",
                       Price = 100,
                       IsHome = true
@@ -48,7 +49,8 @@ namespace OnlineTutor.Data.Config
                       TeacherId = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
                       Title = "Online İngilizce Dersi",
                       Description = "İngilizce anadilli hocadan ingilizce dersleri.",
-                      SubjectId = 3,
+                      SubjectId = 9,
+                      CategoryId = 2,
                       Url = "ozel-ders-ing",
                       Price = 100,
                       IsHome = false

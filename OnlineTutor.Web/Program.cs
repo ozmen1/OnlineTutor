@@ -29,6 +29,12 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "showCardDetails",
+    pattern: "ilanlar/{showCardUrl}",
+    defaults: new { controller = "ShowCard", action = "ShowCardDetails" }
+    );
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

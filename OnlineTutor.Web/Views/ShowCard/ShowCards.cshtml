@@ -1,6 +1,6 @@
 ﻿@model ShowCardWithCategoryDto
 @{
-    ViewData["Title"] = "Ana Sayfa";
+    ViewData["Title"] = "İlanlar";
 }
 <div class="row">
     <div class="col-3">
@@ -9,21 +9,17 @@
 
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-heading_@sc.Name">
+                    <h2 class="accordion-header" id="flush-heading_@sc">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne_@sc.Name" aria-expanded="false" aria-controls="flush-collapseOne">
                             @sc.Name
                         </button>
                     </h2>
                     @foreach (var s in sc.SubjectDtos)
                     {
-                        <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse bordered" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="list-group ml-4">
                                 <a href="#" class="list-group-item list-group-item-action " aria-current="true">
-                                    <a class="btn btn-outline-dark btn-sm"
-                               asp-controller="ShowCard"
-                               asp-action="ListShowCardBySubject"
-                               asp-route-new=@Url>@s.Name</a>
-                                    
+                                    @s.Name
                                 </a>
                             </div>
                         </div>
@@ -43,7 +39,7 @@
                         <h3 class="mb-0">@showCard.Price</h3>
                         <div class="mb-1 text-muted">@showCard.Id</div>
                         <p class="mb-auto"></p>
-@*                        <a href="#" class="stretched-link">Continue reading</a>*@
+                        @*                        <a href="#" class="stretched-link">Continue reading</a>*@
                         <a class="btn btn-outline-dark btn-sm"
                        asp-controller="ShowCard"
                        asp-action="ShowCardDetails"

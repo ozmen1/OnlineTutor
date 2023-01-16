@@ -17,6 +17,8 @@ namespace OnlineTutor.Entity.Concrete
         public bool IsHome { get; set; }
         public Subject Subject { get; set; }
         public int SubjectId { get; set; }
+        public Category Category { get; set; }
+        public int CategoryId { get; set; }
         public Teacher Teacher { get; set; }
         public string TeacherId { get; set; }
         public List<Request> Requests { get; set; }
