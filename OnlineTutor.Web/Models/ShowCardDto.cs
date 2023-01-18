@@ -13,6 +13,8 @@ namespace OnlineTutor.Web.Models
         //public User User { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public List<Subject> Subjects { get; set; }
+        public string SubjectName { get; set; }
     }
 
     //public class User

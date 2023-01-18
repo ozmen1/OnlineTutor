@@ -35,6 +35,12 @@ app.MapControllerRoute(
     );
 
 app.MapControllerRoute(
+    name: "ListShowCardsBySubject",
+    pattern: "ilanlar/{subjectName}",
+    defaults: new { controller = "ShowCard", action = "ListShowCardsBySubject" }
+    );
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

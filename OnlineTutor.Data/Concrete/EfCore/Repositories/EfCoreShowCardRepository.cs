@@ -65,15 +65,15 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subject)
+        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName)
         {
             var showCards = OnlineTutorContext.ShowCards.AsQueryable();
-            if (subject != null)
+            if (subjectName != null)
             {
                 showCards = showCards
                     .Include(p => p.SubjectCategories)
                     .ThenInclude(pc => pc.Category)
-                    .Where(p => p.SubjectCategories.Any(pc => pc.Category.Url == subject));
+                    .Where(p => p.SubjectCategories.Any(pc => pc.Subject.Name == subjectName));
             }
             return await showCards.ToListAsync();
         }

@@ -18,7 +18,9 @@
                     {
                         <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="list-group ml-4">
-                                <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <a href="#" class="list-group-item list-group-item-action "  asp-controller="ShowCard"
+                           asp-action="ListShowCardsBySubject"
+                           asp-route-showCardUrl=@sc.Url aria-current="true">
                                     @s.Name
                                 </a>
                             </div>
