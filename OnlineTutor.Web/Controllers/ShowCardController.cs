@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineTutor.Business.Abstract;
+using OnlineTutor.Business.Concrete;
 using OnlineTutor.Entity.Concrete;
 using OnlineTutor.Web.Models;
 
@@ -8,10 +9,12 @@ namespace OnlineTutor.Web.Controllers
     public class ShowCardController : Controller
     {
         private readonly IShowCardService _showCardManager;
+        private readonly ICategoryService _categoryManager;
 
-        public ShowCardController(IShowCardService showCardManager)
+        public ShowCardController(IShowCardService showCardManager, ICategoryService categoryManager)
         {
             _showCardManager = showCardManager;
+            _categoryManager = categoryManager;
         }
         public IActionResult Index()
         {
@@ -40,25 +43,50 @@ namespace OnlineTutor.Web.Controllers
         //    };
 
         //    return View(showCardDetailsDto);
-        //}
+        }
 
-        public async Task<IActionResult> ListShowCardsBySubject(string subjectName)
+        public async Task<IActionResult> ListShowCardsBySubject(string subjectName, int id)
         {
+            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
 
-            List<ShowCard> showCards = await _showCardManager.GetShowCardsBySubjectAsync(subjectName);
-            List<ShowCardWithCategoryDto> showCardWithCategoryDtos = new List<ShowCardWithCategoryDto>();
+            List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
+            {
+                Name = x.Name,
+                Id = x.Id,
+                SubjectDtos = x.SubjectCategories
+                .Select(x => new SubjectDto
+                {
+                    Id = x.Subject.Id,
+                    Name = x.Subject.Name,
+                }).ToList()
+            }).ToList();
+
+
+            List<ShowCard> showCards = await _showCardManager.GetShowCardsBySubjectAsync(subjectName, id);
+
+            List<ShowCardDto> showCardDtos = new List<ShowCardDto>();
             foreach (var showCard in showCards)
             {
-                showCardWithCategoryDtos.Add(new ShowCardWithCategoryDto
+                showCardDtos.Add(new ShowCardDto
                 {
-                    Id = showCardWithCategoryDtos,
+                    Id = showCard.Id,
                     Title = showCard.Title,
+                    Description = showCard.Description,
                     Price = showCard.Price,
                     Url = showCard.Url,
-                    SubjectName = showCard.Subject.Name
+                    FirstName = showCard.Teacher.FirstName,
+                    LastName = showCard.Teacher.LastName
+
                 });
             }
-            return View(showCardWithCategoryDtos);
+
+            ShowCardWithCategoryDto showCardWithCategoryDto = new ShowCardWithCategoryDto
+            {
+                ShowCardDtos = showCardDtos,
+                CategoryDtos = categoryDtos
+            };
+            return View(showCardWithCategoryDto);
+
         }
     }
 }

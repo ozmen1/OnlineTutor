@@ -38,16 +38,6 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
                 .ToListAsync();
         }
 
-        public Task<List<ShowCard>> GetProductsWithCategories()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<ShowCard>> GetSearchResultsAsync(bool? isApproved, bool? isHome, string searchString, Category category, Subject subject)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl)
         {
             return await OnlineTutorContext
@@ -60,12 +50,7 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
                .FirstOrDefaultAsync();
         }
 
-        public Task<List<ShowCard>> GetShowCardsByCategoryAsync(string category)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName)
+        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName, int id)
         {
             var showCards = OnlineTutorContext.ShowCards.AsQueryable();
             if (subjectName != null)
@@ -73,10 +58,36 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
                 showCards = showCards
                     .Include(p => p.SubjectCategories)
                     .ThenInclude(pc => pc.Category)
-                    .Where(p => p.SubjectCategories.Any(pc => pc.Subject.Name == subjectName));
+                    .Where(p => p.SubjectCategories.Any(pc => pc.Category.Id == id && pc.Subject.Name == subjectName));
             }
             return await showCards.ToListAsync();
         }
+
+        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
+        {
+            return await OnlineTutorContext
+                .ShowCards
+                .Include(sc => sc.SubjectCategories)
+                .ThenInclude(scc => scc.Subject)
+                .ToListAsync();
+        }
+
+        public Task<List<ShowCard>> GetProductsWithCategories()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<ShowCard>> GetSearchResultsAsync(bool? isApproved, bool? isHome, string searchString, Category category, Subject subject)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public Task<List<ShowCard>> GetShowCardsByCategoryAsync(string category)
+        {
+            throw new NotImplementedException();
+        }
+
 
         public Task<List<ShowCard>> GetShowCardsByTeacherAsync(int teacherId)
         {
@@ -88,14 +99,6 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             throw new NotImplementedException();
         }
 
-        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
-        {
-            return await OnlineTutorContext
-                .ShowCards
-                .Include(sc => sc.SubjectCategories)
-                .ThenInclude(scc => scc.Subject)
-                .ToListAsync();
-        }
 
         public void isActive(ShowCard showCard)
         {

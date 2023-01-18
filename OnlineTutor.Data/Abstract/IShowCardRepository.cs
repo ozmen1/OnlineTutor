@@ -14,7 +14,7 @@ namespace OnlineTutor.Data.Abstract
         Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl);
         Task<List<ShowCard>> GetProductsWithCategories();
         Task CreateShowCardAsync(ShowCard showCard, int[] selectedCategoryIds);
-        Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName);
+        Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName, int id);
         Task<ShowCard> GetShowCardsWithCategories(int id);
         Task<List<ShowCard>> GetShowCardsByTeacherAsync(int teacherId);
         Task UpdateShowCardAsync(ShowCard showCard, int[] selectedCategoryIds);

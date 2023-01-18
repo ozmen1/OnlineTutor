@@ -62,9 +62,9 @@ namespace OnlineTutor.Business.Concrete
             throw new NotImplementedException();
         }
 
-        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName)
+        public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(string subjectName, int id)
         {
-            return await _unitOfWork.ShowCards.GetShowCardsBySubjectAsync(subjectName);
+            return await _unitOfWork.ShowCards.GetShowCardsBySubjectAsync(subjectName, id);
         }
     }
 }
