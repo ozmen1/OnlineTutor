@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineTutor.Business\OnlineTutor.Business.csproj" />
+    <ProjectReference Include="..\OnlineTutor.Core\OnlineTutor.Core.csproj" />
   </ItemGroup>
 
 	

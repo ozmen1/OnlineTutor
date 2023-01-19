@@ -42,9 +42,9 @@ namespace OnlineTutor.Business.Concrete
             return await _unitOfWork.ShowCards.GetHomePageShowCardsAsync();
         }
 
-        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
+        public async Task<List<ShowCard>> GetShowCardsWithSubjects()
         {
-            return await _unitOfWork.ShowCards.GetShowCardsWithSubjects(id);
+            return await _unitOfWork.ShowCards.GetShowCardsWithSubjects();
         }
 
         public async Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl)

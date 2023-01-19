@@ -47,56 +47,32 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
                .Include(s => s.SubjectCategoryShowCards)
                .ThenInclude(s => s.SubjectCategory)
                .FirstOrDefaultAsync();
-            //return await OnlineTutorContext
-            //   .ShowCards
-            //   .Where(s => s.Url == showCardUrl)
-            //   .Include(s => s.Teacher)
-            //   .Include(s => s.Subject)
-            //   .Include(s => s.Subject.SubjectCategories)
-            //   .ThenInclude(sc => sc.Category)
-            //   .FirstOrDefaultAsync();
-            //return null;
         }
 
         public async Task<List<ShowCard>> GetShowCardsBySubjectAsync(int subjectId, int categoryId)
         {
             var result = await OnlineTutorContext
-            //return await OnlineTutorContext
                 .ShowCards
                 .Include(sc => sc.SubjectCategoryShowCards)
                 .ThenInclude(scc => scc.SubjectCategory)
                 .Where(x => x.SubjectCategoryShowCards.Any(scu => scu.SubjectCategory.SubjectId == subjectId && scu.SubjectCategory.CategoryId == categoryId))
-                .Include(t=>t.Teacher)
+                .Include(t => t.Teacher)
                 .ToListAsync();
-                return result;
-                
-            //return await OnlineTutorContext
-            //    .ShowCards
-            //    .Include(sc => sc.SubjectCategories)
-            //    .Include(sc => sc.)
-
-
-            //var showCards = OnlineTutorContext.ShowCards.AsQueryable();
-            //if (subjectName != null)
-            //{
-            //    showCards = showCards
-            //        .Include(p => p.SubjectCategories)
-            //        .ThenInclude(pc => pc.Category)
-            //        .Where(p => p.SubjectCategories.Any(pc => pc.Category.Id == id && pc.Subject.Name == subjectName));
-            //}
-            //return await showCards.ToListAsync();
-
-            //return null;
+            return result;
         }
 
-        public async Task<List<ShowCard>> GetShowCardsWithSubjects(int id)
+        public async Task<List<ShowCard>> GetShowCardsWithSubjects()
         {
-            //return await OnlineTutorContext
-            //    .ShowCards
-            //    .Include(sc => sc.SubjectCategories)
-            //    .ThenInclude(scc => scc.Subject)
-            //    .ToListAsync();
-            return null;
+            return await OnlineTutorContext
+                .ShowCards
+                .Include(scs => scs.SubjectCategoryShowCards)
+                .ThenInclude(sc => sc.SubjectCategory)
+                .ThenInclude(x => x.Category)
+                .Include(scs => scs.SubjectCategoryShowCards)
+                .ThenInclude(sc => sc.SubjectCategory)
+                .ThenInclude(x => x.Subject)
+                .Include(y => y.Teacher)
+                .ToListAsync();
         }
 
         public Task<List<ShowCard>> GetProductsWithCategories()

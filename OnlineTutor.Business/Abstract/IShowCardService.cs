@@ -16,8 +16,8 @@ namespace OnlineTutor.Business.Abstract
         void Delete(ShowCard showCard);
         List<ShowCard> GetShowCardsByCategory();
         Task<List<ShowCard>> GetHomePageShowCardsAsync();
-        Task<List<ShowCard>> GetShowCardsWithSubjects(int id);
         Task<List<ShowCard>> GetShowCardsBySubjectAsync(int subjectId, int categoryId);
         Task<ShowCard> GetShowCardDetailsByUrlAsync(string showCardUrl);
+        Task<List<ShowCard>> GetShowCardsWithSubjects();
     }
 }

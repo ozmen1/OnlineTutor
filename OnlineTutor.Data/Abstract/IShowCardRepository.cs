@@ -22,6 +22,6 @@ namespace OnlineTutor.Data.Abstract
         Task UpdateIsApprovedAsync(ShowCard showCard);
         Task<List<ShowCard>> GetSearchResultsAsync(bool? isApproved, bool? isHome, string searchString, Category? category, Subject? subject);
         void isActive(ShowCard showCard);
-        Task<List<ShowCard>> GetShowCardsWithSubjects(int id);
+        Task<List<ShowCard>> GetShowCardsWithSubjects();
     }
 }

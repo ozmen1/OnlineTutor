@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineTutor.Entity", "Onlin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineTutor.Business", "OnlineTutor.Business\OnlineTutor.Business.csproj", "{75FE824F-956B-4828-920B-EDE58DD7A799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTutor.Web", "OnlineTutor.Web\OnlineTutor.Web.csproj", "{64DA1794-CBDA-4BA6-B0DA-C0E93D7C04A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineTutor.Web", "OnlineTutor.Web\OnlineTutor.Web.csproj", "{64DA1794-CBDA-4BA6-B0DA-C0E93D7C04A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineTutor.Core", "OnlineTutor.Core\OnlineTutor.Core.csproj", "{21411D6F-0084-458F-BC7E-C9C3CDADB07E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{64DA1794-CBDA-4BA6-B0DA-C0E93D7C04A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64DA1794-CBDA-4BA6-B0DA-C0E93D7C04A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64DA1794-CBDA-4BA6-B0DA-C0E93D7C04A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21411D6F-0084-458F-BC7E-C9C3CDADB07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21411D6F-0084-458F-BC7E-C9C3CDADB07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21411D6F-0084-458F-BC7E-C9C3CDADB07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21411D6F-0084-458F-BC7E-C9C3CDADB07E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
