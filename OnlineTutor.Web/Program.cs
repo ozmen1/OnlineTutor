@@ -29,16 +29,18 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "showCardDetails",
-    pattern: "ilanlar/{showCardUrl}",
-    defaults: new { controller = "ShowCard", action = "ShowCardDetails" }
-    );
-
-app.MapControllerRoute(
     name: "ListShowCardsBySubject",
     pattern: "ilanlar/{subjectName}",
     defaults: new { controller = "ShowCard", action = "ListShowCardsBySubject" }
     );
+
+app.MapControllerRoute(
+    name: "showCardDetails",
+    pattern: "ilanlar/detay/{showCardUrl}",
+    defaults: new { controller = "ShowCard", action = "ShowCardDetails" }
+    );
+
+
 
 app.MapControllerRoute(
     name: "default",

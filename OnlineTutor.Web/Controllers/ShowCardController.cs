@@ -21,48 +21,47 @@ namespace OnlineTutor.Web.Controllers
             return View();
         }
 
-        //public async Task<IActionResult> ShowCardDetails(string showCardUrl)
-        //{
-        //    if (showCardUrl == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var showCardNew = await _showCardManager.GetShowCardDetailsByUrlAsync(showCardUrl);
-        //    ShowCardDetailsDto showCardDetailsDto = new ShowCardDetailsDto
-        //    {
-        //        Id = showCardNew.Id,
-        //        Title = showCardNew.Title,
-        //        Price = showCardNew.Price,
-        //        //ImageUrl = showCard.ImageUrl,
-        //        Url = showCardNew.Url,
-        //        Description = showCardNew.Description
-        //        //Categories = showCard
-        //        //    .SubjectCategories
-        //        //    .Select(sc => sc.Category)
-        //        //    .ToList()
-        //    };
+        public async Task<IActionResult> ShowCardDetails(string showCardUrl)
+        {
+            if (showCardUrl == null)
+            {
+                return NotFound();
+            }
+            var showCardNew = await _showCardManager.GetShowCardDetailsByUrlAsync(showCardUrl);
+            ShowCardDetailsDto showCardDetailsDto = new ShowCardDetailsDto
+            {
+                Id = showCardNew.Id,
+                Title = showCardNew.Title,
+                Price = showCardNew.Price,
+                //ImageUrl = showCard.ImageUrl,
+                Url = showCardNew.Url,
+                Description = showCardNew.Description
+                //Categories = showCard
+                //    .SubjectCategories
+                //    .Select(sc => sc.Category)
+                //    .ToList()
+            };
 
-        //    return View(showCardDetailsDto);
+            return View(showCardDetailsDto);
         }
 
-        public async Task<IActionResult> ListShowCardsBySubject(string subjectName, int id)
+        public async Task<IActionResult> ListShowCardsBySubject(int subjectId, int categoryId)
         {
-            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
+
+            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(subjectId);
 
             List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
             {
                 Name = x.Name,
-                Id = x.Id,
                 SubjectDtos = x.SubjectCategories
                 .Select(x => new SubjectDto
                 {
-                    Id = x.Subject.Id,
                     Name = x.Subject.Name,
                 }).ToList()
             }).ToList();
 
 
-            List<ShowCard> showCards = await _showCardManager.GetShowCardsBySubjectAsync(subjectName, id);
+            List<ShowCard> showCards = await _showCardManager.GetShowCardsBySubjectAsync(subjectId, categoryId);
 
             List<ShowCardDto> showCardDtos = new List<ShowCardDto>();
             foreach (var showCard in showCards)
@@ -76,7 +75,6 @@ namespace OnlineTutor.Web.Controllers
                     Url = showCard.Url,
                     FirstName = showCard.Teacher.FirstName,
                     LastName = showCard.Teacher.LastName
-
                 });
             }
 
@@ -87,6 +85,7 @@ namespace OnlineTutor.Web.Controllers
             };
             return View(showCardWithCategoryDto);
 
+            //return null;
         }
     }
 }

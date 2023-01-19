@@ -33,6 +33,7 @@ namespace OnlineTutor.Data.Concrete.EfCore.Contexts
             modelBuilder.ApplyConfiguration(new CategoryConfig());
             modelBuilder.ApplyConfiguration(new SubjectConfig());
             modelBuilder.ApplyConfiguration(new SubjectCategoryConfig());
+            modelBuilder.ApplyConfiguration(new SubjectCategoryShowCardConfig());
             modelBuilder.ApplyConfiguration(new TeacherConfig());
             modelBuilder.ApplyConfiguration(new StudentConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());

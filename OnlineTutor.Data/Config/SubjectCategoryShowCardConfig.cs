@@ -9,27 +9,26 @@ using System.Threading.Tasks;
 
 namespace OnlineTutor.Data.Config
 {
-    public class SubjectCategoryConfig : IEntityTypeConfiguration<SubjectCategory>
+    public class SubjectCategoryShowCardConfig : IEntityTypeConfiguration<SubjectCategoryShowCard>
     {
-        public void Configure(EntityTypeBuilder<SubjectCategory> builder)
+        public void Configure(EntityTypeBuilder<SubjectCategoryShowCard> builder)
         {
             builder.HasKey(sc => new { sc.Id });
 
             builder.Property(t => t.Id).ValueGeneratedOnAdd();
 
-            builder.HasAlternateKey(sc => new { sc.SubjectId, sc.CategoryId });
-            builder.ToTable("SubjectCategories");
+            builder.HasAlternateKey(sc => new { sc.SubjectCategoryId, sc.ShowCardId});
+            builder.ToTable("SubjectCategoryShowCards");
 
             builder.HasData(
-                    new SubjectCategory() { Id = 1, SubjectId = 1, CategoryId = 1 },
-                    new SubjectCategory() { Id = 2, SubjectId = 9, CategoryId = 2 }
-                    //new SubjectCategory() { Id = 8, SubjectId = 2, CategoryId = 1 },
-                    //new SubjectCategory() { Id = 3, SubjectId = 3, CategoryId = 1 },
-                    //new SubjectCategory() { Id = 4, SubjectId = 9, CategoryId = 1 },
-                    //new SubjectCategory() { Id = 5, SubjectId = 1, CategoryId = 2 },
+                    new SubjectCategoryShowCard() { Id = 1, SubjectCategoryId = 1, ShowCardId = 1 },
+                    new SubjectCategoryShowCard() { Id = 2, SubjectCategoryId = 2, ShowCardId = 2 }
+                    //new SubjectCategoryShowCard() { Id = 3, SubjectCategoryId = 3, ShowCardId = 1 },
+                    //new SubjectCategoryShowCard() { Id = 4, SubjectCategoryId = 9, ShowCardId = 1 },
+                    //new SubjectCategoryShowCard() { Id = 5, SubjectCategoryId = 1, ShowCardId = 2 },
                     //new SubjectCategory() { Id = 6, SubjectId = 2, CategoryId = 2 },
                     //new SubjectCategory() { Id = 7, SubjectId = 3, CategoryId = 2 },
-                    //new SubjectCategory() { Id = 8, SubjectId = 2, CategoryId = 1 },
+                    //new SubjectCategory() { Id = 8, SubjectId = 9, CategoryId = 2 },
                     //new SubjectCategory() { Id = 9, SubjectId = 8, CategoryId = 2 },
                     //new SubjectCategory() { Id = 10, SubjectId = 6, CategoryId = 4 },
                     //new SubjectCategory() { Id = 11, SubjectId = 7, CategoryId = 4 },

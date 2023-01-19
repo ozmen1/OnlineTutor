@@ -19,6 +19,15 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
         {
             get { return _context as OnlineTutorContext; }
         }
+        public async Task<List<Category>> GetCategoriesWithSubjectsAsync(int id)
+        {
+            return await OnlineTutorContext
+               .Categories
+               .Include(p => p.SubjectCategories)
+               .ThenInclude(sc => sc.Subject)
+               .ToListAsync();
+        }
+
         public Category GetByIdWithShowCards()
         {
             throw new NotImplementedException();
@@ -27,15 +36,6 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
         public Task<List<Category>> GetCategoryWithShowCardsAsync(int id)
         {
             throw new NotImplementedException();
-        }
-
-        public async Task<List<Category>> GetCategoriesWithSubjectsAsync(int id)
-        {
-            return await OnlineTutorContext
-               .Categories
-               .Include(p => p.SubjectCategories)
-               .ThenInclude(sc => sc.Subject)
-               .ToListAsync();
         }
 
         public Task<List<Category>> GetCategoryWithSubjectsAsync(int id)

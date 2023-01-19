@@ -9,9 +9,12 @@ namespace OnlineTutor.Entity.Concrete
 {
     public class SubjectCategory
     {
+        public int Id { get; set; }
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public List<SubjectCategoryShowCard> SubjectCategoryShowCards { get; set; }
+
     }
 }

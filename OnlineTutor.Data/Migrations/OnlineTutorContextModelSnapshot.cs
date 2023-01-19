@@ -393,7 +393,7 @@ namespace OnlineTutor.Data.Migrations
                             Id = 1,
                             ContactNumber = "0555-555-55-55",
                             Expectations = "Kalkülüs dersi için 5 saatlik özel ders",
-                            ResponseTime = new DateTime(2023, 1, 16, 12, 46, 52, 339, DateTimeKind.Local).AddTicks(3305),
+                            ResponseTime = new DateTime(2023, 1, 19, 11, 25, 44, 717, DateTimeKind.Local).AddTicks(7444),
                             ShowCardId = 1,
                             StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc"
                         });
@@ -405,9 +405,6 @@ namespace OnlineTutor.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -417,9 +414,6 @@ namespace OnlineTutor.Data.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("SubjectId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("TeacherId")
                         .HasColumnType("TEXT");
@@ -433,10 +427,6 @@ namespace OnlineTutor.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("SubjectId");
-
                     b.HasIndex("TeacherId");
 
                     b.ToTable("ShowCards", (string)null);
@@ -445,11 +435,9 @@ namespace OnlineTutor.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CategoryId = 1,
                             Description = "Lise, Üniversite matematik dersleri verilir.",
                             IsHome = true,
                             Price = 100m,
-                            SubjectId = 1,
                             TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                             Title = "Online Matematik Dersi",
                             Url = "ozel-ders-1"
@@ -457,11 +445,9 @@ namespace OnlineTutor.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryId = 2,
                             Description = "İngilizce anadilli hocadan ingilizce dersleri.",
                             IsHome = false,
                             Price = 100m,
-                            SubjectId = 9,
                             TeacherId = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
                             Title = "Online İngilizce Dersi",
                             Url = "ozel-ders-ing"
@@ -571,93 +557,71 @@ namespace OnlineTutor.Data.Migrations
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.SubjectCategory", b =>
                 {
-                    b.Property<int>("SubjectId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("ShowCardId")
+                    b.Property<int>("SubjectId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("SubjectId", "CategoryId");
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SubjectId", "CategoryId");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("ShowCardId");
 
                     b.ToTable("SubjectCategories", (string)null);
 
                     b.HasData(
                         new
                         {
-                            SubjectId = 1,
-                            CategoryId = 1
+                            Id = 1,
+                            CategoryId = 1,
+                            SubjectId = 1
                         },
                         new
                         {
-                            SubjectId = 2,
-                            CategoryId = 1
+                            Id = 2,
+                            CategoryId = 2,
+                            SubjectId = 9
+                        });
+                });
+
+            modelBuilder.Entity("OnlineTutor.Entity.Concrete.SubjectCategoryShowCard", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ShowCardId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SubjectCategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("SubjectCategoryId", "ShowCardId");
+
+                    b.HasIndex("ShowCardId");
+
+                    b.ToTable("SubjectCategoryShowCards", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ShowCardId = 1,
+                            SubjectCategoryId = 1
                         },
                         new
                         {
-                            SubjectId = 3,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            SubjectId = 9,
-                            CategoryId = 1
-                        },
-                        new
-                        {
-                            SubjectId = 1,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            SubjectId = 2,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            SubjectId = 3,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            SubjectId = 9,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            SubjectId = 8,
-                            CategoryId = 2
-                        },
-                        new
-                        {
-                            SubjectId = 6,
-                            CategoryId = 4
-                        },
-                        new
-                        {
-                            SubjectId = 7,
-                            CategoryId = 4
-                        },
-                        new
-                        {
-                            SubjectId = 10,
-                            CategoryId = 4
-                        },
-                        new
-                        {
-                            SubjectId = 4,
-                            CategoryId = 3
-                        },
-                        new
-                        {
-                            SubjectId = 5,
-                            CategoryId = 3
+                            Id = 2,
+                            ShowCardId = 2,
+                            SubjectCategoryId = 2
                         });
                 });
 
@@ -676,8 +640,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
                             AccessFailedCount = 0,
                             City = "Kocaeli",
-                            ConcurrencyStamp = "20392deb-1d94-4e78-914a-c2d4bf35dd21",
-                            CreatedDate = new DateTime(2023, 1, 16, 12, 46, 52, 338, DateTimeKind.Local).AddTicks(9873),
+                            ConcurrencyStamp = "36c8820b-943d-4e94-bb1a-651a1ffa8b98",
+                            CreatedDate = new DateTime(2023, 1, 19, 11, 25, 44, 717, DateTimeKind.Local).AddTicks(1625),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "keremozmen34@gmail.com",
                             EmailConfirmed = false,
@@ -687,7 +651,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Özmen",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7a37f87a-e890-4718-a8fb-3914a0b1aee1",
+                            SecurityStamp = "662c7fb4-26fa-4657-90ac-742de11a7bde",
                             TwoFactorEnabled = false,
                             Url = "universite-ogrencisi"
                         },
@@ -696,8 +660,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "7958e383-69c7-4401-bf53-f9de5b12b5e3",
-                            CreatedDate = new DateTime(2023, 1, 16, 12, 46, 52, 338, DateTimeKind.Local).AddTicks(9922),
+                            ConcurrencyStamp = "dc0aed06-81e5-4047-89aa-24eb1eb0d682",
+                            CreatedDate = new DateTime(2023, 1, 19, 11, 25, 44, 717, DateTimeKind.Local).AddTicks(1668),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "example@example.com",
                             EmailConfirmed = false,
@@ -707,7 +671,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Doe",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0cd55425-fd01-4edf-a0d8-b360514c6e27",
+                            SecurityStamp = "c600a03e-68b3-40a3-8d6f-a9bcc4666698",
                             TwoFactorEnabled = false,
                             Url = "lise-ogrencisi"
                         });
@@ -740,8 +704,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "68575687-4014-4a34-af84-307e9d656fc6",
-                            CreatedDate = new DateTime(2023, 1, 16, 12, 46, 52, 338, DateTimeKind.Local).AddTicks(7753),
+                            ConcurrencyStamp = "339c3fcc-7c2e-4b1a-8118-db120907a777",
+                            CreatedDate = new DateTime(2023, 1, 19, 11, 25, 44, 716, DateTimeKind.Local).AddTicks(9093),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "keremozmentr@gmail.com",
                             EmailConfirmed = false,
@@ -751,7 +715,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Özmen",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7167b222-9e38-4f93-a381-b91f1de31c28",
+                            SecurityStamp = "e6766002-43cb-401d-bd15-540318edcc6f",
                             TwoFactorEnabled = false,
                             TeacherInfo = "Deneyimli",
                             TeacherPoint = (byte)0,
@@ -762,8 +726,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "0ab26a54-84dd-4ec9-ae96-79291cffae4f",
-                            CreatedDate = new DateTime(2023, 1, 16, 12, 46, 52, 338, DateTimeKind.Local).AddTicks(7816),
+                            ConcurrencyStamp = "6f281884-42e1-4ab2-b62d-a5cff1168344",
+                            CreatedDate = new DateTime(2023, 1, 19, 11, 25, 44, 716, DateTimeKind.Local).AddTicks(9182),
                             DateOfBirth = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "example@example.com",
                             EmailConfirmed = false,
@@ -773,7 +737,7 @@ namespace OnlineTutor.Data.Migrations
                             LastName = "Doe",
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "eef5098f-5b78-47f4-9ebf-0c57dded71d7",
+                            SecurityStamp = "91dd096b-84ba-4f5f-94f8-f596bc007952",
                             TwoFactorEnabled = false,
                             TeacherInfo = "Deneyimsiz",
                             TeacherPoint = (byte)0,
@@ -866,25 +830,9 @@ namespace OnlineTutor.Data.Migrations
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.ShowCard", b =>
                 {
-                    b.HasOne("OnlineTutor.Entity.Concrete.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("OnlineTutor.Entity.Concrete.Subject", "Subject")
-                        .WithMany()
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("OnlineTutor.Entity.Concrete.Teacher", "Teacher")
                         .WithMany("ShowCards")
                         .HasForeignKey("TeacherId");
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Subject");
 
                     b.Navigation("Teacher");
                 });
@@ -897,10 +845,6 @@ namespace OnlineTutor.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("OnlineTutor.Entity.Concrete.ShowCard", null)
-                        .WithMany("SubjectCategories")
-                        .HasForeignKey("ShowCardId");
-
                     b.HasOne("OnlineTutor.Entity.Concrete.Subject", "Subject")
                         .WithMany("SubjectCategories")
                         .HasForeignKey("SubjectId")
@@ -910,6 +854,25 @@ namespace OnlineTutor.Data.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Subject");
+                });
+
+            modelBuilder.Entity("OnlineTutor.Entity.Concrete.SubjectCategoryShowCard", b =>
+                {
+                    b.HasOne("OnlineTutor.Entity.Concrete.ShowCard", "ShowCard")
+                        .WithMany("SubjectCategoryShowCards")
+                        .HasForeignKey("ShowCardId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineTutor.Entity.Concrete.SubjectCategory", "SubjectCategory")
+                        .WithMany("SubjectCategoryShowCards")
+                        .HasForeignKey("SubjectCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ShowCard");
+
+                    b.Navigation("SubjectCategory");
                 });
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.Student", b =>
@@ -939,12 +902,17 @@ namespace OnlineTutor.Data.Migrations
                 {
                     b.Navigation("Requests");
 
-                    b.Navigation("SubjectCategories");
+                    b.Navigation("SubjectCategoryShowCards");
                 });
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.Subject", b =>
                 {
                     b.Navigation("SubjectCategories");
+                });
+
+            modelBuilder.Entity("OnlineTutor.Entity.Concrete.SubjectCategory", b =>
+                {
+                    b.Navigation("SubjectCategoryShowCards");
                 });
 
             modelBuilder.Entity("OnlineTutor.Entity.Concrete.Student", b =>
