@@ -1,0 +1,36 @@
+﻿@model ShowCardWithCategoryDto
+<div>
+    @foreach (var sc in Model.CategoryDtos)
+    {
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading_@sc.Name">
+                    <form asp-controller="ShowCard"
+                      asp-action="ListShowCardsBySubject"
+                      method="post">
+                        <input type="hidden" name="categoryId" value="@sc.Id" />
+                    </form>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne_@sc.Name" aria-expanded="false" aria-controls="flush-collapseOne">
+                        @sc.Name
+                    </button>
+                </h2>
+                @foreach (var s in sc.SubjectDtos)
+                {
+                    <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse bordered" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="list-group ml-4">
+                            <form asp-controller="ShowCard"
+                          asp-action="ListShowCardsBySubject"
+                          asp-route-subjectName=@s.Name
+                          method="post">
+                                <input type="hidden" name="subjectId" value="@s.Id" />
+                                <input type="hidden" name="categoryId" value="@sc.Id" />
+                                <button type="submit" class="list-group-item list-group-item-action mt-2 bg-info" style="border-color:black;">@s.Name</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>

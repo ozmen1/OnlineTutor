@@ -12,32 +12,31 @@ namespace OnlineTutor.Web.Controllers
     public class HomeController : Controller
     {
         private readonly IShowCardService _showCardManager;
-        private readonly ICategoryService _categoryManager;
+        //private readonly ICategoryService _categoryManager;
 
-        public HomeController(IShowCardService showCardManager, ICategoryService categoryManager)
+        public HomeController(IShowCardService showCardManager)
         {
             _showCardManager = showCardManager;
-            _categoryManager = categoryManager;
         }
 
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index()
         {
-            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
+            //var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
 
-            List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
-            {
-                Name = x.Name,
-                Id = x.Id,
-                Description = x.Description,
-                Url = x.Url,
-                SubjectDtos = x.SubjectCategories.Select(x => new SubjectDto
-                {
-                    Id = x.Subject.Id,
-                    Name = x.Subject.Name,
-                    Description = x.Subject.Description,
-                    Url = x.Subject.Url
-                }).ToList()
-            }).ToList();
+            //List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
+            //{
+            //    Name = x.Name,
+            //    Id = x.Id,
+            //    Description = x.Description,
+            //    Url = x.Url,
+            //    SubjectDtos = x.SubjectCategories.Select(x => new SubjectDto
+            //    {
+            //        Id = x.Subject.Id,
+            //        Name = x.Subject.Name,
+            //        Description = x.Subject.Description,
+            //        Url = x.Subject.Url
+            //    }).ToList()
+            //}).ToList();
             
 
             List<ShowCard> showCards = await _showCardManager.GetHomePageShowCardsAsync();
@@ -58,12 +57,12 @@ namespace OnlineTutor.Web.Controllers
                 });
             }
 
-            ShowCardWithCategoryDto showCardWithCategoryDto = new ShowCardWithCategoryDto
-            {
-                ShowCardDtos = showCardDtos,
-                CategoryDtos = categoryDtos
-            };
-            return View(showCardWithCategoryDto);
+            //ShowCardWithCategoryDto showCardWithCategoryDto = new ShowCardWithCategoryDto
+            //{
+            //    ShowCardDtos = showCardDtos,
+            //    //CategoryDtos = categoryDtos
+            //};
+            return View(showCardDtos);
         }
     }
 }

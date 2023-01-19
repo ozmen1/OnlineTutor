@@ -29,7 +29,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "ListShowCardsBySubject",
+    name: "listShowCardsBySubject",
     pattern: "ilanlar/{subjectName}",
     defaults: new { controller = "ShowCard", action = "ListShowCardsBySubject" }
     );
@@ -40,7 +40,15 @@ app.MapControllerRoute(
     defaults: new { controller = "ShowCard", action = "ShowCardDetails" }
     );
 
+app.MapAreaControllerRoute(
+    name: "admin",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
+app.MapAreaControllerRoute(
+    name: "admin",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
