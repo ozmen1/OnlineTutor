@@ -31,7 +31,6 @@
                 <td>@($"{item.ShowCard.Price:C2}")</td>
                 <td>@item.ShowCard.Description</td>
                 <td>
-                    <ul>
                         @foreach (var category in item.ShowCard.SubjectCategoryShowCards)
                         {
                             <span>@category.SubjectCategory.Category.Name</span>
@@ -40,7 +39,6 @@
                         {
                             <span>@category.SubjectCategory.Subject.Name</span>
                         }
-                    </ul>
                 </td>
                 <td>
                     <span>@item.ShowCard.Teacher.FirstName</span>

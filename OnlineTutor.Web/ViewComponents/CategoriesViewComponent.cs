@@ -15,7 +15,7 @@ namespace OnlineTutor.Web.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
+            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync();
 
             List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
             {

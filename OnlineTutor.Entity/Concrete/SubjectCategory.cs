@@ -15,6 +15,5 @@ namespace OnlineTutor.Entity.Concrete
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public List<SubjectCategoryShowCard> SubjectCategoryShowCards { get; set; }
-
     }
 }

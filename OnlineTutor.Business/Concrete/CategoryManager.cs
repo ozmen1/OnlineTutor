@@ -50,9 +50,14 @@ namespace OnlineTutor.Business.Concrete
             _unitOfWork.Save();
         }
 
-        public async Task<List<Category>> GetCategoriesWithSubjectsAsync(int id)
+        public async Task<List<Category>> GetCategoryWithSubjectsAsync(int id)
         {
-            return await _unitOfWork.Categories.GetCategoriesWithSubjectsAsync(id);
+            return await _unitOfWork.Categories.GetCategoryWithSubjectsAsync(id);
+        }
+
+        public async Task<List<Category>> GetCategoriesWithSubjectsAsync()
+        {
+            return await _unitOfWork.Categories.GetCategoriesWithSubjectsAsync();
         }
     }
 }

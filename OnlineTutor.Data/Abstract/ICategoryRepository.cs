@@ -11,8 +11,8 @@ namespace OnlineTutor.Data.Abstract
     {
         Category GetByIdWithShowCards();
         Task<List<Category>> GetCategoryWithSubjectsAsync(int id);
+        Task<List<Category>> GetCategoriesWithSubjectsAsync();
         Task<List<Category>> GetCategoryWithShowCardsAsync(int id);
-        Task<Category> GetCategoryWithSubjectAsync(int id);
-        Task<List<Category>> GetCategoriesWithSubjectsAsync(int id);
+
     }
 }

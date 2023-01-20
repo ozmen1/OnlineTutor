@@ -1,4 +1,6 @@
-﻿namespace OnlineTutor.Core
+﻿using Microsoft.AspNetCore.Http;
+
+namespace OnlineTutor.Core
 {
     public class Jobs
     {
@@ -41,6 +43,17 @@
             #endregion
 
             return url;
+        }
+        public static string UploadImage(IFormFile image)
+        {
+            var extension = Path.GetExtension(image.FileName);
+            var randomName = $"{Guid.NewGuid()}{extension}";
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", randomName);
+            using (var stream = new FileStream(path, FileMode.Create))
+            {
+                image.CopyTo(stream);
+            }
+            return randomName;
         }
     }
 }

@@ -48,7 +48,7 @@ namespace OnlineTutor.Web.Controllers
         public async Task<IActionResult> ListShowCardsBySubject(int subjectId, int categoryId)
         {
 
-            var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(subjectId);
+            var categories = await _categoryManager.GetCategoryWithSubjectsAsync(subjectId);
 
             List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
             {
@@ -84,8 +84,6 @@ namespace OnlineTutor.Web.Controllers
                 CategoryDtos = categoryDtos
             };
             return View(showCardWithCategoryDto);
-
-            //return null;
         }
     }
 }

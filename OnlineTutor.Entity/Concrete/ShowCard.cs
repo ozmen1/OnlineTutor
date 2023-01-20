@@ -13,7 +13,7 @@ namespace OnlineTutor.Entity.Concrete
         public string Title { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
         public bool IsHome { get; set; }
         //public Subject Subject { get; set; }
         //public int SubjectId { get; set; }
