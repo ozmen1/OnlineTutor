@@ -8,7 +8,7 @@ namespace OnlineTutor.Web.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; } //kontrol et
         public Teacher? Teacher { get; set; }
         //public User User { get; set; }
         public string FirstName { get; set; }

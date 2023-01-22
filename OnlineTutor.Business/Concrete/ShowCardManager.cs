@@ -66,5 +66,10 @@ namespace OnlineTutor.Business.Concrete
         {
             return await _unitOfWork.ShowCards.GetShowCardsBySubjectAsync(subjectId, categoryId);
         }
+
+        public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId)
+        {
+            await _unitOfWork.ShowCards.CreateShowCardAsync(showCard, selectedCategoryId, selectedSubjectId);
+        }
     }
 }

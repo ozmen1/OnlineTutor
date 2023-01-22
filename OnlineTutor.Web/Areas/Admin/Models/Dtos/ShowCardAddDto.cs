@@ -36,7 +36,10 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
         public List<Category> Categories { get; set; }
 
         [Required(ErrorMessage = "En az bir kategori seçilmelidir.")]
-        public int[] SelectedCategoryIds { get; set; }
+        public int SelectedCategoryId { get; set; }
+
+        [Required(ErrorMessage = "En az bir ders seçilmelidir.")]
+        public int SelectedSubjectId { get; set; }
 
         public string ImageUrl { get; set; }
 
