@@ -6,6 +6,7 @@ using OnlineTutor.Entity.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,18 +27,34 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
 
         public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId)
         {
-            await OnlineTutorContext.ShowCards.AddAsync(showCard);
-            await OnlineTutorContext.SaveChangesAsync();
-            var showCards = await OnlineTutorContext.ShowCards
-                .Where(sc => sc.Id == )
-                .ToListAsync();
-            showCard.SubjectCategoryShowCards.Where(sc => sc.ShowCardId == showCard.Id);
-            showCard.SubjectCategoryShowCards = selectedSubjectId
-                .Select(subId => new SubjectCategory
-                {
-                    SubjectId = subId,
-                    CategoryId = selectedCategoryId
-                }).ToList();
+            await OnlineTutorContext
+                .ShowCards
+                .AddAsync(showCard);
+            await OnlineTutorContext
+                .SaveChangesAsync();
+            //await OnlineTutorContext
+            //    .ShowCards
+            //    .Where(sc => sc.Id == showCard.Id)
+            //    .Include(s=>s.SubjectCategoryShowCards)
+            //    .ThenInclude(sc=>sc.SubjectCategory)
+            //    .ThenInclude(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)
+            //    .ToListAsync();
+
+            var subCatResult= await OnlineTutorContext
+                .SubjectCategories
+                .Where(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)
+                .FirstOrDefaultAsync();
+
+            SubjectCategoryShowCard subjectCategoryShowCard = new SubjectCategoryShowCard
+            {
+                SubjectCategoryId = subCatResult.Id,
+                ShowCardId = showCard.Id
+            };
+
+            await OnlineTutorContext
+                .SubjectCategoryShowCards
+                .AddAsync(subjectCategoryShowCard);
+
             await OnlineTutorContext.SaveChangesAsync();
         }
 

@@ -24,6 +24,7 @@ namespace OnlineTutor.Data.Concrete.EfCore.Contexts
         public DbSet<ShowCard> ShowCards { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<SubjectCategory> SubjectCategories { get; set; }
+        public DbSet<SubjectCategoryShowCard> SubjectCategoryShowCards { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=OnlineTutor.db");

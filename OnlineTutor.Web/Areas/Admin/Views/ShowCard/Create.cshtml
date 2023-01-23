@@ -1,4 +1,5 @@
-﻿@model ShowCardAddDto
+﻿@*@model ShowCardAddDto*@
+@model ShowCardAddWithCategoryDto
 <h1>Yeni İlan Ekleme</h1>
 <hr />
 <form class=""
@@ -21,10 +22,10 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
 
-@*            <div class="mb-3">
-                <label asp-for="ImageFile" class="form-label"></label>
-                <input type="file" asp-for="ImageFile" accept="image/" />
-                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            @*            <div class="mb-3">
+            <label asp-for="ImageFile" class="form-label"></label>
+            <input type="file" asp-for="ImageFile" accept="image/" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>*@
             <div class="mb-3">
                 <label asp-for="Description" class="form-label"></label>
@@ -34,41 +35,79 @@
 
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </div>
+
+
+
         <div class="col-4">
             <div>
                 <div>
                     <label asp-for="Categories"></label>
                 </div>
-                @foreach (var category in Model.Categories)
+                @foreach (var sc in Model.CategoryDtos)
                 {
-                    <div>
-                        <input type="checkbox"
-                           class="form-check-input"
-                           name="selectedCategoryIds"
-                           value="@category.Id"
-                           @if (Model.SelectedCategoryIds != null)
-                           {
-                           @(Model.SelectedCategoryIds.Any(sc=>sc==category.Id) ? "checked" : "")
-                           } />
-                        <label>@category.Name</label>
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_@sc.Name">
+
+@*                                <input type="hidden" name="categoryId" value="@sc.Id" />
+                                <input type="checkbox"
+                                   class="form-check-input"
+                                   name="selectedCategoryIds"
+                                   value="@sc.Id"
+                                   @if (Model.SelectedCategoryId != null)
+                                   {
+                                   @(Model.SelectedCategoryId.Equals(Model.SelectedCategoryId == sc.Id) ? "checked" : "")
+                                   } />*@
+                                <label class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne_@sc.Name" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    @sc.Name
+                                </label>
+                                <span asp-validation-for="SelectedCategoryId" class="text-danger"></span>
+                            </h2>
+
+                            @foreach (var s in sc.SubjectDtos)
+                            {
+                                <div id="flush-collapseOne_@sc.Name" class="accordion-collapse collapse bordered" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="list-group ml-4 text-start m-2">
+                                @*        <form asp-controller="ShowCard"
+                                      asp-action="ListShowCardsBySubject"
+                                      asp-route-subjectName=@s.Name
+                                      method="post">*@
+                                            <input type="hidden" name="SelectedSubjectId" value="@s.Id" />
+                                            <input type="hidden" name="SelectedCategoryId" value="@sc.Id" />
+                                            <input type="checkbox"
+                                           class="form-check-input"
+                                           name="selectedSubjectId"
+                                           value="@s.Id"
+                                           @if (Model.SelectedSubjectId != null)
+                                           {
+                                           @(Model.SelectedSubjectId.Equals(Model.SelectedSubjectId == s.Id) ? "checked" : "")
+                                           } />
+                                            <label>@s.Name</label>
+                                        @*</form>*@
+                                    </div>
+                                    <span asp-validation-for="SelectedSubjectId" class="text-danger"></span>
+                                </div>
+                            }
+                        </div>
                     </div>
                 }
-                <span asp-validation-for="SelectedCategoryIds" class="text-danger"></span>
             </div>
+
             <div class="mb-1">Seçenekler</div>
-            <div>
+            <div class="m-2 text-start">
                 <input type="checkbox"
                        class="form-check-input"
                        asp-for="IsHome">
                 <label asp-for="IsHome" class="form-label"></label>
                 <span asp-validation-for="IsHome" class="text-danger"></span>
             </div>
-@*            <div class="mb-3">
-                <input type="checkbox"
-                       class="form-check-input"
-                       asp-for="IsApproved">
-                <label asp-for="IsApproved" class="form-label"></label>
-                <span asp-validation-for="IsApproved" class="text-danger"></span>
+            @*            <div class="mb-3">
+            <input type="checkbox"
+            class="form-check-input"
+            asp-for="IsApproved">
+            <label asp-for="IsApproved" class="form-label"></label>
+            <span asp-validation-for="IsApproved" class="text-danger"></span>
             </div>*@
         </div>
     </div>
