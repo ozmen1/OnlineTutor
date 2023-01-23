@@ -40,6 +40,10 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             //    .ThenInclude(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)
             //    .ToListAsync();
 
+            await OnlineTutorContext
+                .Teachers
+                .ToListAsync();
+
             var subCatResult= await OnlineTutorContext
                 .SubjectCategories
                 .Where(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)

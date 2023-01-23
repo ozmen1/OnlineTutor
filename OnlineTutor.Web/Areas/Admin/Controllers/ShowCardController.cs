@@ -12,12 +12,14 @@ namespace OnlineTutor.Web.Areas.Admin.Controllers
         private readonly IShowCardService _showCardManager;
         private readonly ICategoryService _categoryManager;
         private readonly ISubjectService _subjectManager;
+        private readonly ITeacherService _teacherManager;
 
-        public ShowCardController(IShowCardService showCardManager, ICategoryService categoryManager, ISubjectService subjectManager)
+        public ShowCardController(IShowCardService showCardManager, ICategoryService categoryManager, ISubjectService subjectManager, ITeacherService teacherManager)
         {
             _showCardManager = showCardManager;
             _categoryManager = categoryManager;
             _subjectManager = subjectManager;
+            _teacherManager = teacherManager;
         }
         public async Task<IActionResult> Index()
         {
@@ -50,9 +52,12 @@ namespace OnlineTutor.Web.Areas.Admin.Controllers
                 }).ToList()
             }).ToList();
 
+            var teachers = await _teacherManager.GetAllAsync();
+
             ShowCardAddWithCategoryDto showCardWithCategoryDto = new ShowCardAddWithCategoryDto
             {
-                CategoryDtos = categoryDtos
+                CategoryDtos = categoryDtos,
+                Teachers = teachers
             };
             return View(showCardWithCategoryDto);
         }

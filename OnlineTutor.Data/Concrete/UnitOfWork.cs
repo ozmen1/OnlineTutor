@@ -26,8 +26,9 @@ namespace OnlineTutor.Data.Concrete
 
         private EfCoreSubjectRepository _subjectRepository;
         public ISubjectRepository Subjects => _subjectRepository = _subjectRepository ?? new EfCoreSubjectRepository(_context);
-
-        public ITeacherRepository Teachers => throw new NotImplementedException();
+        
+        private EfCoreTeacherRepository _teacherRepository;
+        public ITeacherRepository Teachers => _teacherRepository = _teacherRepository ?? new EfCoreTeacherRepository(_context);
 
         public IStudentRepository Students => throw new NotImplementedException();
 
