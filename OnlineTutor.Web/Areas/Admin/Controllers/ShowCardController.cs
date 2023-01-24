@@ -76,9 +76,10 @@ namespace OnlineTutor.Web.Areas.Admin.Controllers
                     Url = url,
                     //IsApproved = productAddDto.IsApproved,
                     IsHome = showCardAddWithCategoryDto.IsHome,
+                    TeacherId = showCardAddWithCategoryDto.SelectedTeacherId
                     //ImageUrl = Jobs.UploadImage(productAddDto.ImageFile)
                 };
-                await _showCardManager.CreateShowCardAsync(showCard, showCardAddWithCategoryDto.SelectedCategoryId, showCardAddWithCategoryDto.SelectedSubjectId);
+                await _showCardManager.CreateShowCardAsync(showCard, showCardAddWithCategoryDto.SelectedCategoryId, showCardAddWithCategoryDto.SelectedSubjectId, showCardAddWithCategoryDto.SelectedTeacherId);
                 return RedirectToAction("Index");
             }
             //var categories = await _categoryManager.GetCategoriesWithSubjectsAsync();

@@ -6,8 +6,8 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
     public class CategoryUpdateDto
     {
         public int Id { get; set; }
-        [DisplayName("Kategori Ad")] //sayfada Name olarak ingilizce görünmemesi için
-        [Required(ErrorMessage = "{0} adlı alan boş bırakılmamalıdır.")] //boş bırakılmasını engellemek için
+        [DisplayName("Kategori Ad")]
+        [Required(ErrorMessage = "{0} adlı alan boş bırakılmamalıdır.")]
         [MinLength(5, ErrorMessage = "{0},{1} karakterden kısa olmamalıdır.")]
         [MaxLength(50, ErrorMessage = "{0}, {1} karakterden uzun olmamalıdır.")]
         public string Name { get; set; }

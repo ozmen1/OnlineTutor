@@ -50,5 +50,6 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
         public string ImageUrl { get; set; }
         public List<ShowCardDto> ShowCardDtos { get; set; }
         public List<CategoryDto> CategoryDtos { get; set; }
+
     }
 }

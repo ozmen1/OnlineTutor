@@ -25,26 +25,15 @@ namespace OnlineTutor.Data.Concrete.EfCore.Repositories
             get { return _context as OnlineTutorContext; }
         }
 
-        public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId)
+        public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId, string selectedTeacherId)
         {
             await OnlineTutorContext
                 .ShowCards
                 .AddAsync(showCard);
             await OnlineTutorContext
                 .SaveChangesAsync();
-            //await OnlineTutorContext
-            //    .ShowCards
-            //    .Where(sc => sc.Id == showCard.Id)
-            //    .Include(s=>s.SubjectCategoryShowCards)
-            //    .ThenInclude(sc=>sc.SubjectCategory)
-            //    .ThenInclude(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)
-            //    .ToListAsync();
 
-            await OnlineTutorContext
-                .Teachers
-                .ToListAsync();
-
-            var subCatResult= await OnlineTutorContext
+            var subCatResult = await OnlineTutorContext
                 .SubjectCategories
                 .Where(sc => sc.CategoryId == selectedCategoryId && sc.SubjectId == selectedSubjectId)
                 .FirstOrDefaultAsync();

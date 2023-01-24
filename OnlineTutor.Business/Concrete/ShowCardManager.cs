@@ -67,9 +67,9 @@ namespace OnlineTutor.Business.Concrete
             return await _unitOfWork.ShowCards.GetShowCardsBySubjectAsync(subjectId, categoryId);
         }
 
-        public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId)
+        public async Task CreateShowCardAsync(ShowCard showCard, int selectedCategoryId, int selectedSubjectId, string selectedTeacherId)
         {
-            await _unitOfWork.ShowCards.CreateShowCardAsync(showCard, selectedCategoryId, selectedSubjectId);
+            await _unitOfWork.ShowCards.CreateShowCardAsync(showCard, selectedCategoryId, selectedSubjectId, selectedTeacherId);
         }
     }
 }

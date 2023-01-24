@@ -10,7 +10,6 @@
       enctype="multipart/form-data">
     <div class="row">
         <div class="col-8">
-
             <div class="mb-3">
                 <label asp-for="Name" class="form-label"></label>
                 <input class="form-control" asp-for="Name">
@@ -37,15 +36,25 @@
                 <input class="form-control" asp-for="Description">
                 <span asp-validation-for="Description" class="text-danger"></span>
 *@
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Lütfen bir öğretmen seçiniz.</option>
+@*                <select class="form-select" aria-label="Default select example">
+                    <option selected>Lütfen bir öğretmen seçiniz.</option>*@
                     @foreach (var item in Model.Teachers)
                     {
-                        <option value="@item.Id">@item.FirstName @item.LastName</option>
+                       @*<input type="hidden" name="selectedteacherıd" value="@item.Id" />*@
+                      @*<option type="input" name="SelectedTeacherId" value="@item.Id">@item.Id</option>*@
+                        <input type="radio"
+                           class="form-check-input"
+                           name="SelectedTeacherId"
+                           value="@item.Id"
+                           @* @if (Model.SelectedSubjectId != null)
+                           {
+                           @(Model.SelectedSubjectId.Equals(Model.SelectedSubjectId == s.Id) ? "checked" : "")
+                       }*@ />
+                    <span>@item.FirstName @item.LastName</span>
                     }
-                </select>
+@*
+                </select>*@
             </div>
-
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </div>
 
@@ -107,7 +116,6 @@
                         </div>
                     </div>
                 }
-                @*.Equals(Model.SelectedSubjectId == s.Id)*@
             </div>
 
 

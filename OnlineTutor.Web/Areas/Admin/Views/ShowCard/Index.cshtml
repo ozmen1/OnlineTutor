@@ -41,8 +41,16 @@
                         }
                 </td>
                 <td>
-@*                    <span>@item.ShowCard.Teacher.FirstName</span>
-                    <span>@item.ShowCard.Teacher.LastName</span>*@
+@*                    @if (@item.ShowCard.Teacher.FirstName == null && @item.ShowCard.Teacher.LastName = null)
+                    {
+                        <span>Öğretmen yok</span>
+
+                    }
+                    else
+                    {*@
+                        <span>@item.ShowCard.Teacher.FirstName</span>
+                        <span>@item.ShowCard.Teacher.LastName</span> 
+@*                    }*@
                 </td>
                 <td>
                     <a class="btn btn-warning btn-sm"
