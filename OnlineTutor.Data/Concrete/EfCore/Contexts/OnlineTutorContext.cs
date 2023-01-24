@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using OnlineTutor.Data.Config;
 using OnlineTutor.Entity.Concrete;
 using OnlineTutor.Entity.Concrete.Identity;
+using ShoppingApp.Data.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,12 +26,14 @@ namespace OnlineTutor.Data.Concrete.EfCore.Contexts
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<SubjectCategory> SubjectCategories { get; set; }
         public DbSet<SubjectCategoryShowCard> SubjectCategoryShowCards { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public OnlineTutorContext(DbContextOptions<OnlineTutorContext> options) : base(options)
         {
-            optionsBuilder.UseSqlite("Data Source=OnlineTutor.db");
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.SeedData();
+
             modelBuilder.ApplyConfiguration(new CategoryConfig());
             modelBuilder.ApplyConfiguration(new SubjectConfig());
             modelBuilder.ApplyConfiguration(new SubjectCategoryConfig());

@@ -32,28 +32,13 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="mb-3">
-@*                <label asp-for="Description" class="form-label"></label>
-                <input class="form-control" asp-for="Description">
-                <span asp-validation-for="Description" class="text-danger"></span>
-*@
-@*                <select class="form-select" aria-label="Default select example">
-                    <option selected>Lütfen bir öğretmen seçiniz.</option>*@
+                <select class="form-select" asp-for="SelectedTeacherId">
+                    <label asp-for="SelectedTeacherId" class="form-label"></label>
                     @foreach (var item in Model.Teachers)
                     {
-                       @*<input type="hidden" name="selectedteacherıd" value="@item.Id" />*@
-                      @*<option type="input" name="SelectedTeacherId" value="@item.Id">@item.Id</option>*@
-                        <input type="radio"
-                           class="form-check-input"
-                           name="SelectedTeacherId"
-                           value="@item.Id"
-                           @* @if (Model.SelectedSubjectId != null)
-                           {
-                           @(Model.SelectedSubjectId.Equals(Model.SelectedSubjectId == s.Id) ? "checked" : "")
-                       }*@ />
-                    <span>@item.FirstName @item.LastName</span>
+                        <option value="@item.Id"><span>@item.FirstName @item.LastName</span></option>
                     }
-@*
-                </select>*@
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </div>
@@ -127,14 +112,14 @@
 
 
 
-            <div class="mb-1">Seçenekler</div>
+@*            <div class="mb-1">Seçenekler</div>
             <div class="m-2 text-start">
                 <input type="checkbox"
                        class="form-check-input"
                        asp-for="IsHome">
                 <label asp-for="IsHome" class="form-label"></label>
                 <span asp-validation-for="IsHome" class="text-danger"></span>
-            </div>
+            </div>*@
             @*            <div class="mb-3">
             <input type="checkbox"
             class="form-check-input"
@@ -145,3 +130,7 @@
         </div>
     </div>
 </form>
+
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

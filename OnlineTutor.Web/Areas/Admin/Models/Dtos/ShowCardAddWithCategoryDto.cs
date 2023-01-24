@@ -6,7 +6,7 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
 {
     public class ShowCardAddWithCategoryDto
     {
-        [DisplayName("Ürün Adı")]
+        [DisplayName("İlan Adı")]
         [Required(ErrorMessage = "{0} adlı alan boş bırakılmamalıdır.")]
         [MinLength(5, ErrorMessage = "{0},{1} karakterden kısa olmamalıdır.")]
         [MaxLength(50, ErrorMessage = "{0}, {1} karakterden uzun olmamalıdır.")]
@@ -39,6 +39,8 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
         //public List<Subject> Subjects { get; set; }
 
         public List<Teacher> Teachers { get; set; }
+
+        [DisplayName("Öğretmen")]
         public string SelectedTeacherId { get; set; }
 
 

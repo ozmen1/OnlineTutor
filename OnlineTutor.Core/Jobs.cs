@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace OnlineTutor.Core
 {
@@ -54,6 +55,17 @@ namespace OnlineTutor.Core
                 image.CopyTo(stream);
             }
             return randomName;
+        }
+
+        public static string CreateMessage(string title, string message, string alertType)
+        {
+            var msg = new AlertMessage
+            {
+                Title = title,
+                Message = message,
+                AlertType = alertType
+            };
+            return JsonConvert.SerializeObject(msg);
         }
     }
 }
