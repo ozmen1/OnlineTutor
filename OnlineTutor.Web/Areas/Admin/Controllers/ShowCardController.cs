@@ -107,5 +107,17 @@ namespace OnlineTutor.Web.Areas.Admin.Controllers
             //showCardAddDto.ImageUrl = showCardAddDto.ImageUrl;
             return View(showCardAddWithCategoryDto);
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var showCard = await _showCardManager.GetByIdAsync(id);
+            if (showCard == null)
+            {
+                return NotFound();
+            }
+
+            _showCardManager.Delete(showCard);
+            return RedirectToAction("Index");
+        }
     }
 }

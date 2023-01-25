@@ -24,7 +24,8 @@ namespace OnlineTutor.Business.Concrete
 
         public void Delete(ShowCard showCard)
         {
-            throw new NotImplementedException();
+            _unitOfWork.ShowCards.Delete(showCard);
+            _unitOfWork.Save();
         }
 
         public async Task<List<ShowCard>> GetAllAsync()
@@ -32,9 +33,9 @@ namespace OnlineTutor.Business.Concrete
             return await _unitOfWork.ShowCards.GetAllAsync();
         }
 
-        public Task<ShowCard> GetByIdAsync(int id)
+        public async Task<ShowCard> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.ShowCards.GetByIdAsync(id);
         }
 
         public async Task<List<ShowCard>> GetHomePageShowCardsAsync()

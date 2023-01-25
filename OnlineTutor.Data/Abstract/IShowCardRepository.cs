@@ -23,5 +23,6 @@ namespace OnlineTutor.Data.Abstract
         Task<List<ShowCard>> GetSearchResultsAsync(bool? isApproved, bool? isHome, string searchString, Category? category, Subject? subject);
         void isActive(ShowCard showCard);
         Task<List<ShowCard>> GetShowCardsWithSubjects();
+        
     }
 }

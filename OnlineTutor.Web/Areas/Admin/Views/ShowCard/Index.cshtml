@@ -53,16 +53,13 @@
 @*                    }*@
                 </td>
                 <td>
-                    <a class="btn btn-warning btn-sm"
+@*                    <a class="btn btn-warning btn-sm"
                    asp-area="Admin"
                    asp-controller="ShowCard"
                    asp-action="Edit"
-                   asp-route-id=@item.ShowCard.Id>Düzenle</a>
-                    <a class="btn btn-danger btn-sm"
-                   asp-area="Admin"
-                   asp-controller="ShowCard"
-                   asp-action="Delete"
-                   asp-route-id=@item.ShowCard.Id>Sil</a>
+                   asp-route-id=@item.ShowCard.Id>Düzenle</a>*@
+
+                    @await Html.PartialAsync("_ShowCardDeletePartial", item.ShowCard)
                 </td>
             </tr>
         }

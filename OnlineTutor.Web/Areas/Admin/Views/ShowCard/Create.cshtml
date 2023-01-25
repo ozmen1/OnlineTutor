@@ -32,8 +32,8 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="mb-3">
+                <label asp-for="SelectedTeacherId" class="form-label"></label>
                 <select class="form-select" asp-for="SelectedTeacherId">
-                    <label asp-for="SelectedTeacherId" class="form-label"></label>
                     @foreach (var item in Model.Teachers)
                     {
                         <option value="@item.Id"><span>@item.FirstName @item.LastName</span></option>
