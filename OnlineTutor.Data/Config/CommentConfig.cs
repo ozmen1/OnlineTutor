@@ -39,8 +39,8 @@ namespace OnlineTutor.Data.Config
                     new Comment()
                     {
                         Id = 2,
-                        TeacherId = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
-                        StudentId = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
+                        TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
+                        StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
                         //Title = "Çok iyii", 
                         CommentText = "Harika bir eğitimci.",
                         Url = "comment-2"

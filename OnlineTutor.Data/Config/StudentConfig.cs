@@ -41,26 +41,26 @@ namespace OnlineTutor.Data.Config
 
             builder.ToTable("Students");
 
-            builder.HasData(
-                     new Student()
-                     {
-                         Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
-                         City = "Kocaeli",
-                         FirstName = "Kerem",
-                         LastName = "Özmen",
-                         Url = "universite-ogrencisi",
-                         Email = "keremozmen34@gmail.com"
-                     },
-                    new Student()
-                    {
-                        Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
-                        City = "İstanbul",
-                        FirstName = "Jane",
-                        LastName = "Doe",
-                        Url = "lise-ogrencisi",
-                        Email = "example@example.com"
-                    }
-                );
+            //builder.HasData(
+            //         new Student()
+            //         {
+            //             Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
+            //             City = "Kocaeli",
+            //             FirstName = "Kerem",
+            //             LastName = "Özmen",
+            //             Url = "universite-ogrencisi",
+            //             Email = "keremozmen34@gmail.com"
+            //         },
+            //        new Student()
+            //        {
+            //            Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
+            //            City = "İstanbul",
+            //            FirstName = "Jane",
+            //            LastName = "Doe",
+            //            Url = "lise-ogrencisi",
+            //            Email = "example@example.com"
+            //        }
+            //    );
         }
 
     }

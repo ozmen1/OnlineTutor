@@ -25,9 +25,15 @@ namespace ShoppingApp.Data.Extensions
                 },
                 new Role
                 {
-                    Name = "User",
-                    Description = "User Rolü",
-                    NormalizedName = "USER"
+                    Name = "Student",
+                    Description = "Student Rolü",
+                    NormalizedName = "STUDENT"
+                },
+                new Role
+                {
+                    Name = "Teacher",
+                    Description = "Teacher Rolü",
+                    NormalizedName = "TEACHER"
                 }
             };
             modelBuilder.Entity<Role>().HasData(roles);
@@ -38,11 +44,12 @@ namespace ShoppingApp.Data.Extensions
             {
                 new User
                 {
-                FirstName = "Deniz",
-                LastName = "Admin",
+                Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
+                FirstName = "AdminAd",
+                LastName = "AdminSoyad",
                 UserName = "admin",
                 NormalizedUserName = "ADMIN",
-                Gender = "Kadın",
+                Gender = "Erkek",
                 DateOfBirth = new DateTime(1998,5,19),
                 Email = "admin@gmail.com",
                 NormalizedEmail = "ADMIN@GMAIL.COM",
@@ -50,30 +57,59 @@ namespace ShoppingApp.Data.Extensions
                 PhoneNumber = "5555555555",
                 //Address = "Çek cd. Senet sk. Fatura ap.",
                 City = "İstanbul"
-                },
-                new User
+                }
+            };
+
+            List<User> students = new List<User>
+            {
+                new Student
                 {
-                FirstName = "Kemal",
-                LastName = "User",
-                UserName = "user",
-                NormalizedUserName = "USER",
+                Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
+                FirstName = "OgrenciAd",
+                LastName = "OgrenciSoyad",
+                UserName = "ogrenci",
+                NormalizedUserName = "OGRENCI",
                 Gender = "Erkek",
                 DateOfBirth = new DateTime(1985,10,29),
-                Email = "user@gmail.com",
-                NormalizedEmail = "USER@GMAIL.COM",
+                Email = "ogrenci@gmail.com",
+                NormalizedEmail = "OGRENCI@GMAIL.COM",
                 EmailConfirmed = true,
                 PhoneNumber = "4444444444",
                 //Address = "Akasya cd. Orkide sk. Gül ap.",
                 City = "İzmir"
                 }
             };
+
+            List<User> teachers = new List<User>
+            {
+                new Teacher
+                {
+                Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
+                FirstName = "OgretmenAd",
+                LastName = "OgretmenSoyad",
+                UserName = "teacher",
+                NormalizedUserName = "TEACHER",
+                Gender = "Erkek",
+                DateOfBirth = new DateTime(1985,10,29),
+                Email = "teacher@gmail.com",
+                NormalizedEmail = "TEACHER@GMAIL.COM",
+                EmailConfirmed = true,
+                PhoneNumber = "3333333333",
+                //Address = "Akasya cd. Orkide sk. Gül ap.",
+                City = "Ankara"
+                }
+            };
+
             modelBuilder.Entity<User>().HasData(users);
+            modelBuilder.Entity<Student>().HasData(students);
+            modelBuilder.Entity<Teacher>().HasData(teachers);
             #endregion
 
             #region parola-islemleri
             var passwordHasher = new PasswordHasher<User>();
             users[0].PasswordHash = passwordHasher.HashPassword(users[0], "Qwe123.");
-            users[1].PasswordHash = passwordHasher.HashPassword(users[1], "Qwe123.");
+            students[0].PasswordHash = passwordHasher.HashPassword(students[0], "Qwe123.");
+            teachers[0].PasswordHash = passwordHasher.HashPassword(teachers[0], "Qwe123.");
             #endregion
 
             #region kullanici-rol-atama-islemleri
@@ -86,8 +122,13 @@ namespace ShoppingApp.Data.Extensions
                 },
                 new IdentityUserRole<string>
                 {
-                    UserId = users[1].Id,
-                    RoleId = roles.First(r => r.Name == "User").Id
+                    UserId = students[0].Id,
+                    RoleId = roles.First(r => r.Name == "Student").Id
+                },
+                new IdentityUserRole<string>
+                {
+                    UserId = teachers[0].Id,
+                    RoleId = roles.First(r => r.Name == "Teacher").Id
                 }
             };
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(userRoles);

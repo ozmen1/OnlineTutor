@@ -38,30 +38,30 @@ namespace OnlineTutor.Data.Config
 
             builder.ToTable("Teachers");
 
-            builder.HasData(
-                     new Teacher()
-                     {
-                         Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
-                         City = "İstanbul",
-                         FirstName = "Kerem",
-                         LastName = "Özmen",
-                         TeacherInfo = "Deneyimli",
-                         //TeacherStatue = Entity.Enum.TeacherStatue.Leader,
-                         Url = "deneyimli",
-                         Email = "keremozmentr@gmail.com"
-                     },
-                    new Teacher()
-                    {
-                        Id = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
-                        City = "İstanbul",
-                        FirstName = "John",
-                        LastName = "Doe",
-                        TeacherInfo = "Deneyimsiz",
-                        //TeacherStatue = Entity.Enum.TeacherStatue.Super,
-                        Url = "deneyimsiz",
-                        Email = "example@example.com"
-                    }
-                );
+            //builder.HasData(
+            //         new Teacher()
+            //         {
+            //             Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
+            //             City = "İstanbul",
+            //             FirstName = "Kerem",
+            //             LastName = "Özmen",
+            //             TeacherInfo = "Deneyimli",
+            //             //TeacherStatue = Entity.Enum.TeacherStatue.Leader,
+            //             Url = "deneyimli",
+            //             Email = "keremozmentr@gmail.com"
+            //         },
+            //        new Teacher()
+            //        {
+            //            Id = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
+            //            City = "İstanbul",
+            //            FirstName = "John",
+            //            LastName = "Doe",
+            //            TeacherInfo = "Deneyimsiz",
+            //            //TeacherStatue = Entity.Enum.TeacherStatue.Super,
+            //            Url = "deneyimsiz",
+            //            Email = "example@example.com"
+            //        }
+            //    );
         }
     }
 }

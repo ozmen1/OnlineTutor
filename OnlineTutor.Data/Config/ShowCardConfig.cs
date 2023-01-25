@@ -46,7 +46,7 @@ namespace OnlineTutor.Data.Config
                   new ShowCard()
                   {
                       Id = 2,
-                      TeacherId = "fc4ac19b-331c-90f1-z2df-xd49869e3351",
+                      TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                       Title = "Online İngilizce Dersi",
                       Description = "İngilizce anadilli hocadan ingilizce dersleri.",
                       //SubjectId = 9,
