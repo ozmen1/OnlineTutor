@@ -11,7 +11,7 @@ using OnlineTutor.Data.Concrete.EfCore.Contexts;
 namespace OnlineTutor.Data.Migrations
 {
     [DbContext(typeof(OnlineTutorContext))]
-    [Migration("20230125115913_InitialDb")]
+    [Migration("20230125195245_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
@@ -106,17 +106,17 @@ namespace OnlineTutor.Data.Migrations
                         new
                         {
                             UserId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
-                            RoleId = "660b88d7-f17f-43e9-b453-e846b0c666e7"
+                            RoleId = "7e1d8351-f067-45d7-bc13-aa14e44db64a"
                         },
                         new
                         {
                             UserId = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
-                            RoleId = "95de3ddd-0f30-4e89-9584-a4a1ad6d6222"
+                            RoleId = "50029d51-368b-4b8d-9b07-b1d600440192"
                         },
                         new
                         {
                             UserId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
-                            RoleId = "b8f876f3-337b-43d8-ad40-b86d3e1d8978"
+                            RoleId = "90dac613-5a72-4bd7-8db9-dd53914a3fe9"
                         });
                 });
 
@@ -232,18 +232,9 @@ namespace OnlineTutor.Data.Migrations
                             Id = 1,
                             CommentText = "Mükemmel bir eğitimci.",
                             Point = (byte)0,
-                            StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
+                            StudentId = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
                             TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                             Url = "comment-1"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CommentText = "Harika bir eğitimci.",
-                            Point = (byte)0,
-                            StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
-                            TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
-                            Url = "comment-2"
                         });
                 });
 
@@ -278,21 +269,21 @@ namespace OnlineTutor.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "660b88d7-f17f-43e9-b453-e846b0c666e7",
+                            Id = "7e1d8351-f067-45d7-bc13-aa14e44db64a",
                             Description = "Admin Rolü",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "95de3ddd-0f30-4e89-9584-a4a1ad6d6222",
+                            Id = "50029d51-368b-4b8d-9b07-b1d600440192",
                             Description = "Student Rolü",
                             Name = "Student",
                             NormalizedName = "STUDENT"
                         },
                         new
                         {
-                            Id = "b8f876f3-337b-43d8-ad40-b86d3e1d8978",
+                            Id = "90dac613-5a72-4bd7-8db9-dd53914a3fe9",
                             Description = "Teacher Rolü",
                             Name = "Teacher",
                             NormalizedName = "TEACHER"
@@ -402,8 +393,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
                             AccessFailedCount = 0,
                             City = "İstanbul",
-                            ConcurrencyStamp = "88b085bb-65ea-411c-b4fe-313b0756c945",
-                            CreatedDate = new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9177),
+                            ConcurrencyStamp = "61e8d569-0ba2-42b1-bdf7-b27cc5474c13",
+                            CreatedDate = new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7332),
                             DateOfBirth = new DateTime(1998, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
                             EmailConfirmed = true,
@@ -415,10 +406,10 @@ namespace OnlineTutor.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEI+/BvbIXpymc7voaNBv9PfUIzplX05LAIfdNxL2sZqegMqPrAo2ehK2mWg8YH5nUQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJCXcesIPb2R/AzECnONfYMHPHW36+41UqeHA51UV4RZJBsNanv/vQuoeumpJNudRg==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8e2f5faf-c578-4d57-9b4a-4e6710e20139",
+                            SecurityStamp = "6b2d8b33-098f-4f15-ada4-ed9a921ebfd3",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -463,9 +454,9 @@ namespace OnlineTutor.Data.Migrations
                             Id = 1,
                             ContactNumber = "0555-555-55-55",
                             Expectations = "Kalkülüs dersi için 5 saatlik özel ders",
-                            ResponseTime = new DateTime(2023, 1, 25, 14, 59, 13, 245, DateTimeKind.Local).AddTicks(5398),
+                            ResponseTime = new DateTime(2023, 1, 25, 22, 52, 45, 343, DateTimeKind.Local).AddTicks(1507),
                             ShowCardId = 1,
-                            StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc"
+                            StudentId = "86c02fd2-67c2-4a94-8113-a751bfe9f71f"
                         });
                 });
 
@@ -711,8 +702,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
                             AccessFailedCount = 0,
                             City = "İzmir",
-                            ConcurrencyStamp = "e244ced1-04e4-4bf2-8255-a8acc712cc52",
-                            CreatedDate = new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9289),
+                            ConcurrencyStamp = "d666ad9d-3780-499b-a91c-3253a1b1d774",
+                            CreatedDate = new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7394),
                             DateOfBirth = new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "ogrenci@gmail.com",
                             EmailConfirmed = true,
@@ -724,10 +715,10 @@ namespace OnlineTutor.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "OGRENCI@GMAIL.COM",
                             NormalizedUserName = "OGRENCI",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBfkOIbITEBkQzxkl5i3PPGMnT89CctVGlnxvMdw0w2BXxcSJbQz1eemUL32uglXWQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMD6r5X/sO9lWgx6jOBFiSnHJJIISNHQXOxF55qkQgOqTSHfkXMlUKitAQcfQtrjew==",
                             PhoneNumber = "4444444444",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4e5f60a7-3225-4140-8f72-d30ae7d09cc9",
+                            SecurityStamp = "c5afaa94-ccef-487d-bb16-39ddb00486d2",
                             TwoFactorEnabled = false,
                             UserName = "ogrenci"
                         });
@@ -760,8 +751,8 @@ namespace OnlineTutor.Data.Migrations
                             Id = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
                             AccessFailedCount = 0,
                             City = "Ankara",
-                            ConcurrencyStamp = "83e69317-28a1-4fa0-9425-1fd8b8e7a2d1",
-                            CreatedDate = new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9335),
+                            ConcurrencyStamp = "15726b63-c5c4-4291-9305-a53e7b025f7c",
+                            CreatedDate = new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7476),
                             DateOfBirth = new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "teacher@gmail.com",
                             EmailConfirmed = true,
@@ -773,10 +764,10 @@ namespace OnlineTutor.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "TEACHER@GMAIL.COM",
                             NormalizedUserName = "TEACHER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDI8UJR+yA0fYGonEaarKYlzTx5KZKpFCOtSEF+44kM1T8es8qUqiUchEdb2R7R/Eg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDMlDiZ7HQOY26CBsv9egjoJSCYcfE+j1GqRxxEtQ8oqvimDzugVLC5vYwyYvJU5Og==",
                             PhoneNumber = "3333333333",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "37ff429f-5710-44a3-9a2f-db5057f4cfcf",
+                            SecurityStamp = "fa78aae0-58b1-42fd-a2ec-66cf53e97e29",
                             TwoFactorEnabled = false,
                             UserName = "teacher",
                             TeacherPoint = (byte)0

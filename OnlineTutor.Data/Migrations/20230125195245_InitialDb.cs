@@ -375,9 +375,9 @@ namespace OnlineTutor.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "660b88d7-f17f-43e9-b453-e846b0c666e7", null, "Admin Rolü", "Admin", "ADMIN" },
-                    { "95de3ddd-0f30-4e89-9584-a4a1ad6d6222", null, "Student Rolü", "Student", "STUDENT" },
-                    { "b8f876f3-337b-43d8-ad40-b86d3e1d8978", null, "Teacher Rolü", "Teacher", "TEACHER" }
+                    { "50029d51-368b-4b8d-9b07-b1d600440192", null, "Student Rolü", "Student", "STUDENT" },
+                    { "7e1d8351-f067-45d7-bc13-aa14e44db64a", null, "Admin Rolü", "Admin", "ADMIN" },
+                    { "90dac613-5a72-4bd7-8db9-dd53914a3fe9", null, "Teacher Rolü", "Teacher", "TEACHER" }
                 });
 
             migrationBuilder.InsertData(
@@ -385,9 +385,9 @@ namespace OnlineTutor.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "City", "ConcurrencyStamp", "CreatedDate", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "IsApproved", "IsDeleted", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", 0, "İstanbul", "88b085bb-65ea-411c-b4fe-313b0756c945", new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9177), new DateTime(1998, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "AdminAd", "Erkek", false, false, "AdminSoyad", false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEI+/BvbIXpymc7voaNBv9PfUIzplX05LAIfdNxL2sZqegMqPrAo2ehK2mWg8YH5nUQ==", "5555555555", false, "8e2f5faf-c578-4d57-9b4a-4e6710e20139", false, "admin" },
-                    { "86c02fd2-67c2-4a94-8113-a751bfe9f71f", 0, "İzmir", "e244ced1-04e4-4bf2-8255-a8acc712cc52", new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9289), new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "ogrenci@gmail.com", true, "OgrenciAd", "Erkek", false, false, "OgrenciSoyad", false, null, "OGRENCI@GMAIL.COM", "OGRENCI", "AQAAAAIAAYagAAAAEBfkOIbITEBkQzxkl5i3PPGMnT89CctVGlnxvMdw0w2BXxcSJbQz1eemUL32uglXWQ==", "4444444444", false, "4e5f60a7-3225-4140-8f72-d30ae7d09cc9", false, "ogrenci" },
-                    { "dc4ac19a-431c-40f1-a2df-cd49869e3559", 0, "Ankara", "83e69317-28a1-4fa0-9425-1fd8b8e7a2d1", new DateTime(2023, 1, 25, 14, 59, 12, 696, DateTimeKind.Local).AddTicks(9335), new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "teacher@gmail.com", true, "OgretmenAd", "Erkek", false, false, "OgretmenSoyad", false, null, "TEACHER@GMAIL.COM", "TEACHER", "AQAAAAIAAYagAAAAEDI8UJR+yA0fYGonEaarKYlzTx5KZKpFCOtSEF+44kM1T8es8qUqiUchEdb2R7R/Eg==", "3333333333", false, "37ff429f-5710-44a3-9a2f-db5057f4cfcf", false, "teacher" }
+                    { "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", 0, "İstanbul", "61e8d569-0ba2-42b1-bdf7-b27cc5474c13", new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7332), new DateTime(1998, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), "admin@gmail.com", true, "AdminAd", "Erkek", false, false, "AdminSoyad", false, null, "ADMIN@GMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJCXcesIPb2R/AzECnONfYMHPHW36+41UqeHA51UV4RZJBsNanv/vQuoeumpJNudRg==", "5555555555", false, "6b2d8b33-098f-4f15-ada4-ed9a921ebfd3", false, "admin" },
+                    { "86c02fd2-67c2-4a94-8113-a751bfe9f71f", 0, "İzmir", "d666ad9d-3780-499b-a91c-3253a1b1d774", new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7394), new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "ogrenci@gmail.com", true, "OgrenciAd", "Erkek", false, false, "OgrenciSoyad", false, null, "OGRENCI@GMAIL.COM", "OGRENCI", "AQAAAAIAAYagAAAAEMD6r5X/sO9lWgx6jOBFiSnHJJIISNHQXOxF55qkQgOqTSHfkXMlUKitAQcfQtrjew==", "4444444444", false, "c5afaa94-ccef-487d-bb16-39ddb00486d2", false, "ogrenci" },
+                    { "dc4ac19a-431c-40f1-a2df-cd49869e3559", 0, "Ankara", "15726b63-c5c4-4291-9305-a53e7b025f7c", new DateTime(2023, 1, 25, 22, 52, 44, 982, DateTimeKind.Local).AddTicks(7476), new DateTime(1985, 10, 29, 0, 0, 0, 0, DateTimeKind.Unspecified), "teacher@gmail.com", true, "OgretmenAd", "Erkek", false, false, "OgretmenSoyad", false, null, "TEACHER@GMAIL.COM", "TEACHER", "AQAAAAIAAYagAAAAEDMlDiZ7HQOY26CBsv9egjoJSCYcfE+j1GqRxxEtQ8oqvimDzugVLC5vYwyYvJU5Og==", "3333333333", false, "fa78aae0-58b1-42fd-a2ec-66cf53e97e29", false, "teacher" }
                 });
 
             migrationBuilder.InsertData(
@@ -423,9 +423,9 @@ namespace OnlineTutor.Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "660b88d7-f17f-43e9-b453-e846b0c666e7", "55dc4a34-a463-46b2-8fb3-e97a76f70cfc" },
-                    { "95de3ddd-0f30-4e89-9584-a4a1ad6d6222", "86c02fd2-67c2-4a94-8113-a751bfe9f71f" },
-                    { "b8f876f3-337b-43d8-ad40-b86d3e1d8978", "dc4ac19a-431c-40f1-a2df-cd49869e3559" }
+                    { "7e1d8351-f067-45d7-bc13-aa14e44db64a", "55dc4a34-a463-46b2-8fb3-e97a76f70cfc" },
+                    { "50029d51-368b-4b8d-9b07-b1d600440192", "86c02fd2-67c2-4a94-8113-a751bfe9f71f" },
+                    { "90dac613-5a72-4bd7-8db9-dd53914a3fe9", "dc4ac19a-431c-40f1-a2df-cd49869e3559" }
                 });
 
             migrationBuilder.InsertData(
@@ -450,11 +450,7 @@ namespace OnlineTutor.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Comments",
                 columns: new[] { "Id", "CommentText", "Point", "StudentId", "TeacherId", "Url" },
-                values: new object[,]
-                {
-                    { 1, "Mükemmel bir eğitimci.", (byte)0, "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", "dc4ac19a-431c-40f1-a2df-cd49869e3559", "comment-1" },
-                    { 2, "Harika bir eğitimci.", (byte)0, "55dc4a34-a463-46b2-8fb3-e97a76f70cfc", "dc4ac19a-431c-40f1-a2df-cd49869e3559", "comment-2" }
-                });
+                values: new object[] { 1, "Mükemmel bir eğitimci.", (byte)0, "86c02fd2-67c2-4a94-8113-a751bfe9f71f", "dc4ac19a-431c-40f1-a2df-cd49869e3559", "comment-1" });
 
             migrationBuilder.InsertData(
                 table: "ShowCards",
@@ -468,7 +464,7 @@ namespace OnlineTutor.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Requests",
                 columns: new[] { "Id", "ContactNumber", "Expectations", "ResponseTime", "ShowCardId", "StudentId" },
-                values: new object[] { 1, "0555-555-55-55", "Kalkülüs dersi için 5 saatlik özel ders", new DateTime(2023, 1, 25, 14, 59, 13, 245, DateTimeKind.Local).AddTicks(5398), 1, "55dc4a34-a463-46b2-8fb3-e97a76f70cfc" });
+                values: new object[] { 1, "0555-555-55-55", "Kalkülüs dersi için 5 saatlik özel ders", new DateTime(2023, 1, 25, 22, 52, 45, 343, DateTimeKind.Local).AddTicks(1507), 1, "86c02fd2-67c2-4a94-8113-a751bfe9f71f" });
 
             migrationBuilder.InsertData(
                 table: "SubjectCategoryShowCards",

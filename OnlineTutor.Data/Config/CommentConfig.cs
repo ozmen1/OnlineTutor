@@ -31,20 +31,21 @@ namespace OnlineTutor.Data.Config
                     {
                         Id = 1,
                         TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
-                        StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
+                        StudentId = "86c02fd2-67c2-4a94-8113-a751bfe9f71f",
                         //Title = "Çok iyii", 
                         CommentText = "Mükemmel bir eğitimci.",
                         Url = "comment-1"
-                    },
-                    new Comment()
-                    {
-                        Id = 2,
-                        TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
-                        StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
-                        //Title = "Çok iyii", 
-                        CommentText = "Harika bir eğitimci.",
-                        Url = "comment-2"
                     }
+                    //,
+                    //new Comment()
+                    //{
+                    //    Id = 2,
+                    //    TeacherId = "dc4ac19a-431c-40f1-a2df-cd49869e3559",
+                    //    StudentId = "55dc4a34-a463-46b2-8fb3-e97a76f70cfc",
+                    //    //Title = "Çok iyii", 
+                    //    CommentText = "Harika bir eğitimci.",
+                    //    Url = "comment-2"
+                    //}
 
                 );
         }
