@@ -35,12 +35,14 @@ namespace OnlineTutor.Web.Controllers
                 Price = showCardNew.Price,
                 //ImageUrl = showCard.ImageUrl,
                 Url = showCardNew.Url,
-                Description = showCardNew.Description
-                //Categories = showCard
-                //    .SubjectCategories
-                //    .Select(sc => sc.Category)
-                //    .ToList()
-            };
+                Description = showCardNew.Description,
+                FirstName = showCardNew.Teacher.FirstName,
+				LastName = showCardNew.Teacher.LastName
+				//Categories = showCard
+				//    .SubjectCategories
+				//    .Select(sc => sc.Category)
+				//    .ToList()
+			};
 
             return View(showCardDetailsDto);
         }

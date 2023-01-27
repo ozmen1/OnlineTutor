@@ -1,11 +1,12 @@
 ﻿@model CategoryListDto
-<h1>Kategoriler</h1>
-<hr />
-<a class="btn btn-outline-primary"
-   asp-area="Admin"
-   asp-controller="Category"
-   asp-action="Create">Yeni Kategori Ekle</a>
-<hr />
+<div class="row">
+    <h1>Kategoriler</h1>
+    <a class="btn btn-outline-primary"
+       asp-area="Admin"
+       asp-controller="Category"
+       asp-action="Create">Yeni Kategori Ekle</a>
+    <hr />
+</div>
 <table class="table table-responsive table-bordered">
     <thead>
         <tr>
@@ -20,10 +21,10 @@
         @foreach (var category in Model.Categories)
         {
             <tr>
-                <th>@category.Id</th>
-                <th>@category.Name</th>
-                <th>@category.Description</th>
-                <th>@category.Url</th>
+                <td>@category.Id</td>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>@category.Url</td>
                 <td>
                     <a class="btn btn-warning btn-sm"
                    asp-area="Admin"

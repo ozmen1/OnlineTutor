@@ -32,5 +32,11 @@ namespace OnlineTutor.Web.Models
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Parola ile {0} aynı olmalıdır.")]
         public string RePassword { get; set; }
+
+        [DisplayName("Öğretmen")]
+        public bool IsTeacher { get; set; }
+
+        [DisplayName("Öğrenci")]
+        public bool IsStudent { get; set; }
     }
 }

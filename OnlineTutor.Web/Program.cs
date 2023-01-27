@@ -5,6 +5,7 @@ using OnlineTutor.Business.Concrete;
 using OnlineTutor.Data.Abstract;
 using OnlineTutor.Data.Concrete;
 using OnlineTutor.Data.Concrete.EfCore.Contexts;
+using OnlineTutor.Data.Concrete.EfCore.Repositories;
 using OnlineTutor.Entity.Concrete.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -54,11 +55,13 @@ builder.Services.ConfigureApplicationCookie(options =>
     };
 });
 
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IShowCardService, ShowCardManager>();
 builder.Services.AddScoped<ISubjectService, SubjectManager>();
 builder.Services.AddScoped<ITeacherService, TeacherManager>();
+builder.Services.AddScoped<IStudentService, StudentManager>();
 
 
 var app = builder.Build();

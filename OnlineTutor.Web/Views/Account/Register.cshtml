@@ -37,6 +37,18 @@
                 <input class="form-control" asp-for="RePassword">
                 <span asp-validation-for="RePassword" class="text-danger"></span>
             </div>
+            <div class="mb-3">
+                
+                <div class="form-check">
+                    <label asp-for="IsStudent" class="form-label"></label>
+                    <input class="form-check-input" type="checkbox" value="IsStudent" checked>
+                </div>
+                <div class="form-check">
+                    <label asp-for="IsTeacher" class="form-label"></label>
+                    <input class="form-check-input" type="checkbox" value="IsTeacher">
+                </div>
+
+            </div>
             <button type="submit" class="btn btn-primary">Kayıt Ol</button>
             <a type="button" class="btn btn-light"
                asp-controller="Home"
