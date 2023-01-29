@@ -38,10 +38,6 @@ namespace OnlineTutor.Web.Controllers
                 Description = showCardNew.Description,
                 FirstName = showCardNew.Teacher.FirstName,
 				LastName = showCardNew.Teacher.LastName
-				//Categories = showCard
-				//    .SubjectCategories
-				//    .Select(sc => sc.Category)
-				//    .ToList()
 			};
 
             return View(showCardDetailsDto);

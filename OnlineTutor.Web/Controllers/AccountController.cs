@@ -65,58 +65,42 @@ namespace OnlineTutor.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User
+                if (registerDto.IsTeacher)
                 {
-                    FirstName = registerDto.FirstName,
-                    LastName = registerDto.LastName,
-                    UserName = registerDto.UserName,
-                    Email = registerDto.Email,
-                    City = registerDto.LastName
-                };
-                var result = await _userManager.CreateAsync(user, registerDto.Password);
-                if (result.Succeeded)
-                {
-                    if (registerDto.IsTeacher == true)
+                    var teacher = new Teacher
                     {
-                        await _userManager.AddToRoleAsync(user, "Teacher");
-                        Teacher teacher = new Teacher
-                        {
-                            FirstName = registerDto.FirstName,
-                            LastName = registerDto.LastName,
-                            UserName = registerDto.UserName,
-                            Email = registerDto.Email,
-                            City = registerDto.LastName
-                        };
-                        await _teacherManager.CreateAsync(teacher);
-                        //await _cardManager.InitializeCard(user.Id);
-
-                    }
-                    else
-                    {
-                        await _userManager.AddToRoleAsync(user, "Student");
-                        Student student = new Student
-                        {
-                            FirstName = registerDto.FirstName,
-                            LastName = registerDto.LastName,
-                            UserName = registerDto.UserName,
-                            Email = registerDto.Email,
-                            City = registerDto.LastName
-                        };
-                        await _studentManager.CreateAsync(student);
-                    }
-                    //await _userManager.AddToRoleAsync(user, "User");
-                    ////await _cardManager.InitializeCard(user.Id);
-                    //TempData["Message"] = Jobs.CreateMessage("Bilgi", "Başarıyla oluşturuldu", "success");
-                    //return RedirectToAction("Login", "Account");
-                    //    }
-                    TempData["Message"] = Jobs.CreateMessage("Bilgi", "Başarıyla oluşturuldu", "success");
-                    return RedirectToAction("Login", "Account");
+                        FirstName = registerDto.FirstName,
+                        LastName = registerDto.LastName,
+                        UserName = registerDto.UserName,
+                        Email = registerDto.Email,
+                        City = registerDto.LastName,
+                        Url = registerDto.LastName
+                    };
+                    await _userManager.CreateAsync(teacher, registerDto.Password);
+                    await _userManager.AddToRoleAsync(teacher, "Teacher");
                 }
+                else
+                {
+                    var student = new Student
+                    {
+                        FirstName = registerDto.FirstName,
+                        LastName = registerDto.LastName,
+                        UserName = registerDto.UserName,
+                        Email = registerDto.Email,
+                        City = registerDto.LastName,
+                        Url = registerDto.LastName
+                    };
+                    await _userManager.CreateAsync(student, registerDto.Password);
+                    await _userManager.AddToRoleAsync(student, "Student");
+                }
+                TempData["Message"] = Jobs.CreateMessage("Bilgi", "Başarıyla oluşturuldu", "success");
+                return RedirectToAction("Login", "Account");
             }
-            _context.SaveChanges();
-
-            ModelState.AddModelError("", "Bilinmeyen bir hata oluştu, lütfen tekrar deneyiniz");
-            return View(registerDto);
+            else
+            {
+                ModelState.AddModelError("", "Bilinmeyen bir hata oluştu, lütfen tekrar deneyiniz");
+                return View(registerDto);
+            }
         }
 
         public async Task<IActionResult> Logout()

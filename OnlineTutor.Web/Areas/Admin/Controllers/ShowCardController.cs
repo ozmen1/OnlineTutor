@@ -82,29 +82,6 @@ namespace OnlineTutor.Web.Areas.Admin.Controllers
                 await _showCardManager.CreateShowCardAsync(showCard, showCardAddWithCategoryDto.SelectedCategoryId, showCardAddWithCategoryDto.SelectedSubjectId, showCardAddWithCategoryDto.SelectedTeacherId);
                 return RedirectToAction("Index");
             }
-            //var categories = await _categoryManager.GetCategoriesWithSubjectsAsync();
-
-            //List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
-            //{
-            //    Name = x.Name,
-            //    Id = x.Id,
-            //    Description = x.Description,
-            //    Url = x.Url,
-            //    SubjectDtos = x.SubjectCategories.Select(x => new SubjectDto
-            //    {
-            //        Id = x.Subject.Id,
-            //        Name = x.Subject.Name,
-            //        Description = x.Subject.Description,
-            //        Url = x.Subject.Url
-            //    }).ToList()
-            //}).ToList();
-
-            //ShowCardAddWithCategoryDto showCardWithCategoryDto = new ShowCardAddWithCategoryDto
-            //{
-            //    CategoryDtos = categoryDtos
-            //};
-
-            //showCardAddDto.ImageUrl = showCardAddDto.ImageUrl;
             return View(showCardAddWithCategoryDto);
         }
 

@@ -1,6 +1,4 @@
-﻿@*@await Html.PartialAsync("_ShowCardPartial")*@
-
-@model ShowCardWithCategoryDto
+﻿@model ShowCardWithCategoryDto
 <div class="d-flex col-6">
     @foreach (var showCard in Model.ShowCardDtos)
     {
@@ -11,7 +9,6 @@
                     <h3 class="mb-0">@showCard.Price</h3>
                     <div class="mb-1 text-muted">@showCard.Id</div>
                     <p class="mb-auto"></p>
-                    @*                        <a href="#" class="stretched-link">Continue reading</a>*@
                     <a class="btn btn-outline-dark btn-sm"
                    asp-controller="ShowCard"
                    asp-action="ShowCardDetails"

@@ -8,18 +8,11 @@ namespace OnlineTutor.Web.Areas.Admin.Models.Dtos
         public string Title { get; set; }
         public string Description { get; set; }
         public string Url { get; set; }
-        public decimal? Price { get; set; } //kontrol et
+        public decimal? Price { get; set; }
         public Teacher? Teacher { get; set; }
-        //public User User { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public List<Subject> Subjects { get; set; }
         public string SubjectName { get; set; }
     }
-
-    //public class User
-    //{
-    //    public string FirstName { get; set; }
-    //    public string LastName { get; set; }
-    //}
 }

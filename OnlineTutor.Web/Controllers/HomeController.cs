@@ -21,24 +21,6 @@ namespace OnlineTutor.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            //var categories = await _categoryManager.GetCategoriesWithSubjectsAsync(id);
-
-            //List<CategoryDto> categoryDtos = categories.Select(x => new CategoryDto
-            //{
-            //    Name = x.Name,
-            //    Id = x.Id,
-            //    Description = x.Description,
-            //    Url = x.Url,
-            //    SubjectDtos = x.SubjectCategories.Select(x => new SubjectDto
-            //    {
-            //        Id = x.Subject.Id,
-            //        Name = x.Subject.Name,
-            //        Description = x.Subject.Description,
-            //        Url = x.Subject.Url
-            //    }).ToList()
-            //}).ToList();
-            
-
             List<ShowCard> showCards = await _showCardManager.GetHomePageShowCardsAsync();
 
             List<ShowCardDto> showCardDtos = new List<ShowCardDto>();
@@ -56,12 +38,6 @@ namespace OnlineTutor.Web.Controllers
 
                 });
             }
-
-            //ShowCardWithCategoryDto showCardWithCategoryDto = new ShowCardWithCategoryDto
-            //{
-            //    ShowCardDtos = showCardDtos,
-            //    //CategoryDtos = categoryDtos
-            //};
             return View(showCardDtos);
         }
     }
